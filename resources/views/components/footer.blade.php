@@ -1,10 +1,9 @@
 <!-- resources/views/components/footer.blade.php -->
 
-<!--
-// v0 by Vercel.
-// https://v0.dev/t/ZJFQ1960EGu
--->
-<footer class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+
+
+
+    <footer class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
     <div class="container px-4 md:px-6">
         <div class="flex flex-col items-center justify-center space-y-4 text-center">
             <div class="space-y-2">
