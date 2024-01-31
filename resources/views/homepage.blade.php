@@ -109,14 +109,17 @@
   
    
     <!-- Sección 3 -->
-    <section class="flex items-center p-8 bg-gray-200">
-        <img class="w-1/2 mr-8" src="otra/ruta/de/imagen.jpg" alt="Otra Imagen">
-        <div>
-            <p class="text-lg font-semibold mb-4">Texto descriptivo</p>
-            <button class="bg-green-500 text-white px-4 py-2 mr-4">Botón 1</button>
-            <button class="bg-red-500 text-white px-4 py-2">Botón 2</button>
-        </div>
-    </section>
+    <section class="relative bg-gray-200 h-96 overflow-hidden">
+    <img class="w-full h-full object-cover" src="http://localhost/restaurante-laravel/resources/views/images/huevosrotos1.jpg" alt="Mi Foto">
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-2">Especialidades de la casa</h2>
+        <div class="w-16 border-b-2 border-gray-800 mx-auto mb-6"></div>
+        <p class="text-lg font-semibold text-gray-800">
+            Asador tradicional aragonés de corazón, en nuestro restaurante puedes disfrutar de carnes y chuletones a la brasa, pescados y mariscos, los clásicos platos de cuchara o los guisos y asados “de la abuela”.
+        </p>
+    </div>
+</section>
+
 
     @include('components.footer')
 </body>
