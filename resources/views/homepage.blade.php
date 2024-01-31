@@ -25,26 +25,32 @@
         </div>
     </section>
 
-  
-    <!-- Sección 2 -->
-    <section class="flex justify-around items-center p-8 bg-slate-400">
+    <section class="flex justify-around items-center p-8">
         <!-- Icono 1 -->
-        <div class="text-center">
-            <img class="w-12 h-12 mb-2" src="" alt="Icono 1">
+        <div class="text-center mb-4">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/select.png" alt="Icono 1">
             <p class="text-sm">Descripción 1</p>
         </div>
-        <div class="text-center">
-            <img class="w-12 h-12 mb-2" src="" alt="Icono 1">
-            <p class="text-sm">Descripción 1</p>
+
+        <!-- Icono 2 -->
+        <div class="text-center mb-4">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/ubicacion.png" alt="Icono 2">
+            <p class="text-sm">Descripción 2</p>
         </div>
-        <div class="text-center">
-            <img class="w-12 h-12 mb-2" src="" alt="Icono 1">
-            <p class="text-sm">Descripción 1</p>
+
+        <!-- Icono 3 -->
+        <div class="text-center mb-4">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/reloj.png" alt="Icono 3">
+            <p class="text-sm">Descripción 3</p>
         </div>
-        <!-- Repite este bloque para los otros 3 iconos -->
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">Botón</button>
     </section>
 
+    <!-- Sección 3 (Botón) -->
+    <section class="flex items-center justify-center p-8">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded">Botón</button>
+    </section>
+  
+   
     <!-- Sección 3 -->
     <section class="flex items-center p-8 bg-gray-200">
         <img class="w-1/2 mr-8" src="otra/ruta/de/imagen.jpg" alt="Otra Imagen">
