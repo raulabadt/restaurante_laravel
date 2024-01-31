@@ -20,34 +20,38 @@
                 <div class="absolute z-10 w-32 h-32 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-red-700 delay-150 group-hover:delay-150"></div>
                 <div class="absolute z-10 w-24 h-24 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-red-600 delay-150 group-hover:delay-200"></div>
                 <div class="absolute z-10 w-16 h-16 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-red-500 delay-150 group-hover:delay-300"></div>
-                <p class="z-10">Take away</p>
+                <p class="z-10">Para llevar</p>
             </a>
         </div>
     </section>
 
-    <section class="flex justify-around items-center p-8">
+    <section class="flex justify-around items-center p-8 bg-orange-200">
         <!-- Icono 1 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/select.png" alt="Icono 1">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/select1.png" alt="Icono 1">
             <p class="text-sm">Descripción 1</p>
         </div>
 
         <!-- Icono 2 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/ubicacion.png" alt="Icono 2">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/ubicacion1.png" alt="Icono 2">
             <p class="text-sm">Descripción 2</p>
         </div>
 
         <!-- Icono 3 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/reloj.png" alt="Icono 3">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/reloj2.png" alt="Icono 3">
             <p class="text-sm">Descripción 3</p>
         </div>
     </section>
 
     <!-- Sección 3 (Botón) -->
-    <section class="flex items-center justify-center p-8">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">Botón</button>
+    <section class="flex items-center justify-center p-8 bg-orange-200">
+    <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:text-white shadow-white transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
+        Ver carta
+    </button>
+
+
     </section>
   
    

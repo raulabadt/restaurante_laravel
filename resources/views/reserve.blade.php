@@ -8,11 +8,11 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 ">
 
 @include('components.header')
 
-<section class="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center">
+<section class="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center bg-orange-200">
   <div class="container px-4 md:px-6">
     <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <div class="space-y-4">
@@ -101,7 +101,7 @@
                   type="number"
                 />
               </div>
-              <button class="bg-gray-950 text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+              <button class="bg-red-500 text-white-400 border border-red-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
                 <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
                 Submit
               </button>

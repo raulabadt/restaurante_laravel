@@ -8,17 +8,17 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+<body class="bg-gray-100 dark:bg-orange-200 text-gray-800 ">
 @include('components.header')
 
-  <div class="flex items-center justify-center h-screen">
-    <div class="rounded-lg border bg-card text-card-foreground shadow-lg" data-v0-t="card">
+  <div class="flex items-center justify-center h-screen ">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-lg bg-orange-600" data-v0-t="card">
       <div class="flex flex-col space-y-1.5 p-6">
         <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">Contact Us</h3>
         <p class="text-sm text-muted-foreground">Fill out the form below, and we'll get back to you as soon as possible.</p>
       </div>
       <div class="p-6">
-        <form class="space-y-4">
+        <form class="space-y-4 ">
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
               <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="first-name">First name</label>
