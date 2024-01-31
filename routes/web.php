@@ -24,3 +24,15 @@ Route::get('/contact', function () {
 Route::get('/reserve', function () {
     return view('reserve');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/take_away', function () {
+    return view('take_away');
+});
+
+Route::get('/menu', function () {
+    return view('menu');
+});

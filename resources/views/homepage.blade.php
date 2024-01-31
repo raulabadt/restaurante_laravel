@@ -29,27 +29,80 @@
         <!-- Icono 1 -->
         <div class="text-center mb-4">
             <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/select1.png" alt="Icono 1">
-            <p class="text-sm">Descripción 1</p>
+            <h2 class="font-semibold text-base text-black"> Elige los platos que más te gusten y pide por teléfono: +1 (555) 123-4567</h2>
         </div>
 
         <!-- Icono 2 -->
         <div class="text-center mb-4">
             <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/ubicacion1.png" alt="Icono 2">
-            <p class="text-sm">Descripción 2</p>
+            <p class="font-semibold text-base text-black">Recógelo en nuestro restaurante</p>
         </div>
 
         <!-- Icono 3 -->
         <div class="text-center mb-4">
             <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/reloj2.png" alt="Icono 3">
-            <p class="text-sm">Descripción 3</p>
+            <p class="font-semibold text-base text-black">Disfrútalo en tu casa</p>
         </div>
+    </section>
+
+    <section class="flex items-center justify-center p-8 bg-orange-200">
+        
+            <div class="w-full max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-black tracking-wide uppercase">Horario</h2>
+                    
+                    <div class="mt-10"><dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                                        <line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line>
+                                        <line x1="3" x2="21" y1="10" y2="10"></line>
+                                    </svg>
+                                </div>
+                                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Lunes - Viernes</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">8:00 AM - 10:00 PM</dd>
+                        </div>
+                        <div class="relative">
+                            <dt>
+                                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                </div>
+                                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Sábado</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">10:00 AM - 11:00 PM</dd>
+                        </div>
+                        <div class="relative">
+                            <dt>
+                                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                </div>
+                                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Domingo</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">10:00 AM - 9:00 PM</dd>
+                        </div>
+                        <div class="relative">
+                            <dt>
+                                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                </div>
+                                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Brunch de Domingo</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">10:00 AM - 2:00 PM</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
     </section>
 
     <!-- Sección 3 (Botón) -->
     <section class="flex items-center justify-center p-8 bg-orange-200">
-    <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:text-white shadow-white transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
-        Ver carta
-    </button>
+        <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:text-white shadow-white transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
+            Ver carta
+        </button>
 
 
     </section>
