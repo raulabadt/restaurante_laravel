@@ -8,38 +8,76 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="bg-gray-100 dark:bg-orange-200 text-gray-800 dark:text-gray-100">
+<body class="bg-gray-100 bg-orange-400 text-gray-800 dark:text-gray-100">
 @include('components.header')
 
-  <div class="flex items-center justify-center h-screen ">
-    <div class="rounded-lg border bg-card text-card-foreground shadow-lg bg-orange-600" data-v0-t="card">
-      <div class="flex flex-col space-y-1.5 p-6">
-        <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">Contact Us</h3>
-        <p class="text-sm text-muted-foreground">Fill out the form below, and we'll get back to you as soon as possible.</p>
-      </div>
-      <div class="p-6">
-        <form class="space-y-4 ">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="space-y-2">
-              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="first-name">Nombre</label>
-              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="first-name" placeholder="Enter your first name"></div>
-            <div class="space-y-2">
-              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="last-name">Apellidos</label>
-              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="last-name" placeholder="Enter your last name"></div>
-          </div>
-          <div class="space-y-2">
-            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">Email</label>
-            <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" placeholder="Enter your email" type="email"></div>
-          <div class="space-y-2">
-            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="message">Mensaje</label>
-            <textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]" id="message" placeholder="Enter your message"></textarea>
-          </div>
-          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" type="submit">Enviar</button>
-        </form>
-      </div>
-    </div>
-  </div>
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/9boEGJ8hecW
+-->
+<section class="flex items-center justify-center p-8 bg-orange-200">
+<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contacto</h2>
 
+</section>
+
+<section class="p-8 bg-orange-200 flex flex-col sm:flex-row items-center justify-center">
+        <p class="text-lg leading-6 font-medium text-gray-900 mb-4 sm:mb-0 sm:mr-16">Llama a este número: 673 83 75 97</p>
+        <p class="text-lg leading-6 font-medium text-gray-900 ml-0 sm:ml-16">Manda un correo a: info@mirestaurante.com</p>
+    </section>
+
+<section class="flex items-center justify-center p-8 bg-orange-200">
+
+        <div class="w-full max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base font-semibold text-black tracking-wide uppercase">Horario</h2>
+                
+                <div class="mt-10"><dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <div class="relative">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                                    <line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line>
+                                    <line x1="3" x2="21" y1="10" y2="10"></line>
+                                </svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Lunes - Viernes</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">8:00 AM - 10:00 PM</dd>
+                    </div>
+                    <div class="relative">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Sábado</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">10:00 AM - 11:00 PM</dd>
+                    </div>
+                    <div class="relative">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Domingo</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">10:00 AM - 9:00 PM</dd>
+                    </div>
+                    <div class="relative">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Brunch de Domingo</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">10:00 AM - 2:00 PM</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+</section>
+  
   @include('components.footer')
 
 </body>

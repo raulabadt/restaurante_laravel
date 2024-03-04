@@ -11,10 +11,10 @@
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
     @include('components.header')
     <section class="relative bg-gray-200 h-96 overflow-hidden">
-        <img class="w-full h-full object-cover"  src="http://localhost/restaurante-laravel/resources/views/images/barra.png" alt="Mi Foto">
+        <img class="w-full h-full object-cover"  src="http://localhost/restaurante_laravel/resources/views/images/barra.png" alt="Mi Foto">
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-            <img class="w-32 h-32 mx-auto mb-4 rounded-full"  src="http://localhost/restaurante-laravel/resources/views/images/takeaway.jpg" alt="Otra Imagen">
-            <a href="#" class="relative border hover:border-red-600 duration-500 group cursor-pointer text-sky-50  overflow-hidden h-14 w-56 rounded-md bg-red-800 p-2 flex justify-center items-center font-extrabold">
+            <img class="w-32 h-32 mx-auto mb-4 rounded-full"  src="http://localhost/restaurante_laravel/resources/views/images/takeaway.jpg" alt="Otra Imagen">
+            <a href="/take_away" class="relative border hover:border-red-600 duration-500 group cursor-pointer text-sky-50  overflow-hidden h-14 w-56 rounded-md bg-red-800 p-2 flex justify-center items-center font-extrabold">
                 <div class="absolute z-10 w-48 h-48 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-red-900 delay-150 group-hover:delay-75"></div>
                 <div class="absolute z-10 w-40 h-40 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-red-800 delay-150 group-hover:delay-100"></div>
                 <div class="absolute z-10 w-32 h-32 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-red-700 delay-150 group-hover:delay-150"></div>
@@ -28,19 +28,19 @@
     <section class="flex justify-around items-center p-8 bg-orange-200">
         <!-- Icono 1 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/select1.png" alt="Icono 1">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante_laravel/resources/views/iconos/select1.png" alt="Icono 1">
             <h2 class="font-semibold text-base text-black"> Elige los platos que más te gusten y pide por teléfono: +1 (555) 123-4567</h2>
         </div>
 
         <!-- Icono 2 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/ubicacion1.png" alt="Icono 2">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante_laravel/resources/views/iconos/ubicacion1.png" alt="Icono 2">
             <p class="font-semibold text-base text-black">Recógelo en nuestro restaurante</p>
         </div>
 
         <!-- Icono 3 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante-laravel/resources/views/iconos/reloj2.png" alt="Icono 3">
+            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante_laravel/resources/views/iconos/reloj2.png" alt="Icono 3">
             <p class="font-semibold text-base text-black">Disfrútalo en tu casa</p>
         </div>
     </section>
@@ -100,9 +100,9 @@
 
     <!-- Sección 3 (Botón) -->
     <section class="flex items-center justify-center p-8 bg-orange-200">
-        <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:text-white shadow-white transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
+        <a href="/menu" class="bg-red-500 hover:bg-red-300 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:text-white shadow-white transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
             Ver carta
-        </button>
+        </a>
 
 
     </section>
@@ -110,7 +110,7 @@
    
     <!-- Sección 3 -->
     <section class="relative bg-gray-200 h-96 overflow-hidden">
-    <img class="w-full h-full object-cover" src="http://localhost/restaurante-laravel/resources/views/images/huevosrotos1.jpg" alt="Mi Foto">
+    <img class="w-full h-full object-cover" src="http://localhost/restaurante_laravel/resources/views/images/huevosrotos1.jpg" alt="Mi Foto">
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
         <h2 class="text-4xl font-extrabold text-gray-800 mb-2">Especialidades de la casa</h2>
         <div class="w-16 border-b-2 border-gray-800 mx-auto mb-6"></div>

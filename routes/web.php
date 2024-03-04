@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReservaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('enviar.reserva');
 
 Route::get('/', function () {
     return view('homepage');
@@ -36,3 +38,7 @@ Route::get('/take_away', function () {
 Route::get('/menu', function () {
     return view('menu');
 });
+
+
+
+
