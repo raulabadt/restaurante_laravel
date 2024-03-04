@@ -8,7 +8,7 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="bg-gray-100 bg-orange-400 text-gray-800 dark:text-gray-100">
+<body class=" bg-orange-400 text-gray-800 ">
 @include('components.header')
 
 <div class="flex flex-col min-h-screen">
@@ -17,7 +17,7 @@
     <div class="container flex flex-col items-center justify-center gap-4 px-4 md:px-6">
       <div class="text-center">
         <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Comida para Llevar</h2>
-        <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+        <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl lg:text-base/relaxed xl:text-xl/relaxed ">
           Disfruta de nuestros deliciosos platos en la comodidad de tu hogar. Haz tu pedido y deja que el sabor
           hable por sí mismo.
         </p>
@@ -44,7 +44,7 @@
       </div>
       <div class="flex flex-col gap-2 min-[400px]:flex-row">
         <a
-          class="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+          class="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50  "
           href="/menu"
           rel="ugc"
         >

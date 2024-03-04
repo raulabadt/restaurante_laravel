@@ -8,7 +8,7 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="bg-gray-100 bg-orange-400 text-gray-800 dark:text-gray-100 ">
+<body class= bg-orange-400 text-gray-800 ">
 
 @include('components.header')
 

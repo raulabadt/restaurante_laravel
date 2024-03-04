@@ -8,7 +8,7 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+<body class="bg-gray-100  text-gray-800 ">
     @include('components.header')
     <section class="relative bg-gray-200 h-96 overflow-hidden">
         <img class="w-full h-full object-cover"  src="http://localhost/restaurante_laravel/resources/views/images/barra.png" alt="Mi Foto">

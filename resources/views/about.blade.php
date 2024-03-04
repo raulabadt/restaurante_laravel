@@ -8,7 +8,7 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="bg-gray-100 bg-orange-400 text-gray-800 dark:text-gray-100">
+<body class=" bg-orange-400 text-gray-800 ">
 @include('components.header')
 <!--
 // v0 by Vercel.
@@ -22,7 +22,7 @@
         Sobre Nosotros
             </h2>
             <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed 
-            lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            lg:text-base/relaxed xl:text-xl/relaxed ">
                 Descubre la pasión por la comida auténtica. En el corazón de
                 nuestra cocina se encuentra el compromiso con los sabores
                 frescos y la hospitalidad excepcional.
@@ -44,7 +44,7 @@
             <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Nuestra Historia
             </h2>
-            <p class="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p class="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
                 Desde nuestros humildes comienzos como un pequeño puesto de
                 comida callejera, siempre hemos buscado ofrecer a nuestros
                 clientes una experiencia culinaria excepcional.
@@ -66,7 +66,7 @@
             <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Nuestro Enfoque
             </h2>
-            <p class="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p class="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
                 En cada plato que servimos, celebramos los ingredientes
                 frescos y la creatividad en la cocina. Nuestro enfoque
                 culinario único combina tradición y modernidad para
@@ -89,7 +89,7 @@
             <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Nuestros Valores
             </h2>
-            <p class="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p class="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 En el corazón de nuestro restaurante se encuentran nuestros
                 valores fundamentales: calidad, hospitalidad y
                 comunidad. Nos esforzamos por ofrecer una experiencia
