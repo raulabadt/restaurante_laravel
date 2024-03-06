@@ -29,6 +29,10 @@
                 <input type="text" id="name" name="name" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Ingrese su nombre" required>
             </div>
             <div class="space-y-2">
+                <label for="mail" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Introduce tu mail</label>
+                <input type="text" id="mail" name="mail" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Introduce el mail" required>
+            </div>
+            <div class="space-y-2">
                 <label for="adultos" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Número de adultos</label>
                 <input type="number" id="adultos" name="adultos" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="0" required>
             </div>
@@ -37,13 +41,8 @@
                 <input type="number" id="niños" name="niños" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="0" required>
             </div>
             <div class="space-y-2">
-                <label class="text-sm font-medium leading-none" for="trona">¿Necesitas trona?</label>
-                <div class="flex items-center space-x-4">
-                    <input type="radio" id="yes" name="trona" value="yes">
-                    <label for="yes">Sí</label>
-                    <input type="radio" id="no" name="trona" value="no">
-                    <label for="no">No</label>
-                </div>
+                <label for="trona" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Número de tronas</label>
+                <input type="number" id="trona" name="trona" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="0" required>
             </div>
             <div class="space-y-2">
                 <label for="date" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Fecha</label>
@@ -60,17 +59,16 @@
            
 
             <!-- <div class="space-y-2">
-                <label class="text-sm font-medium leading-none">Selecciona la mesa en la que quieres comer:</label>
-                <img src="http://localhost/restaurante_laravel/resources/views/images/plano_restaurante.jpg" alt="Plano del restaurante" width="600" usemap="#mesas">
-                <map name="mesas">
-                    <area shape="RECTANGLE" coords="48,121,277,223" alt="Mesa 1" href="#mesa1">
-                    <area shape="RECTANGLE" coords="327,119,594,239" alt="Mesa 2" href="#mesa2">
-                    <area shape="RECTANGLE" coords="691,127,1074,237" alt="Mesa 3" href="#mesa3">
-                    <area shape="RECTANGLE" coords="37,367,321,482" alt="Mesa 4" href="#mesa4">
-                    <area shape="RECTANGLE" coords="386,357,655,489" alt="Mesa 5" href="#mesa5"> -->
-                    <!-- Agrega más áreas sensibles de tipo rectángulo según sea necesario -->
-                <!-- </map>
-            </div> -->
+    <label class="text-sm font-medium leading-none">Selecciona la mesa en la que quieres comer:</label>
+    <img src="http://localhost/restaurante_laravel/resources/views/images/plano_restaurante.jpg" alt="Plano del restaurante" width="600" usemap="#mesas">
+    <map name="mesas">
+        <area shape="RECTANGLE" coords="48,121,277,223" alt="Mesa 1" href="#mesa1" style="background-color: rgba(255, 0, 0, 0.3);">
+        <area shape="RECTANGLE" coords="327,119,594,239" alt="Mesa 2" href="#mesa2" style="background-color: rgba(0, 255, 0, 0.3);">
+        <area shape="RECTANGLE" coords="691,127,1074,237" alt="Mesa 3" href="#mesa3" style="background-color: rgba(0, 0, 255, 0.3);">
+        <area shape="RECTANGLE" coords="37,367,321,482" alt="Mesa 4" href="#mesa4" style="background-color: rgba(255, 255, 0, 0.3);">
+        <area shape="RECTANGLE" coords="386,357,655,489" alt="Mesa 5" href="#mesa5" style="background-color: rgba(255, 0, 255, 0.3);">
+    </map>
+</div> -->
 
             <button type="submit" class="flex items-center bg-orange-500 gap-1 px-4 py-2 cursor-pointer text-gray-800 font-semibold tracking-widest rounded-md duration-300 hover:gap-2 hover:translate-x-3">
                 Reservar
@@ -78,6 +76,12 @@
                     <path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" stroke-linejoin="round" stroke-linecap="round"></path>
                 </svg>
             </button>
+            <a href="/reserve_cancel" class="flex items-center bg-orange-500 gap-1 px-4 py-2 cursor-pointer text-gray-800 font-semibold tracking-widest rounded-md duration-300 hover:gap-2 hover:translate-x-3">
+                Cancelar reserva
+                <svg class="w-5 h-5" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+            </a>
 
         </form>
         <!-- <script>

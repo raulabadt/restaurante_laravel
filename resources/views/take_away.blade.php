@@ -11,7 +11,7 @@
 <body class=" bg-orange-400 text-gray-800 ">
 @include('components.header')
 
-<div class="flex flex-col min-h-screen">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
   <section class="py-12 md:py-24 lg:py-32">
     <div class="container flex flex-col items-center justify-center gap-4 px-4 md:px-6">

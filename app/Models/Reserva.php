@@ -13,24 +13,28 @@ class Reserva extends Model
 
     protected $fillable = [
         'nombre',
+        'mail',
         'num_adultos',
         'num_niños',
         'trona',
         'fecha',
         'hora',
         'alergias',
-        'estado'
+        'estado',
+        'codigo'
     ];
 
     protected $casts = [
         'nombre' => 'string',
+        'mail' => 'string',
         'num_adultos' => 'integer',
         'num_niños' => 'integer',
-        'trona' => 'boolean',
+        'trona' => 'integer',
         'fecha' => 'date',
         'hora' => 'datetime:H:i', // Formato 'hora:minutos'
         'alergias' => 'string',
-        'estado' => 'string'
+        'estado' => 'string',
+        'codigo' => 'integer'
     ];
 }
 

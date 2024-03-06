@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id(); // Columna de clave primaria autoincremental
-            $table->string('nombre'); // Columna para nombre y apellidos
-            $table->integer('num_adultos'); // Columna para número de adultos
+            $table->string('nombre');// Columna para nombre y apellidos
+            $table->string('mail'); 
+            $table->integer('num_adultos');// Columna para número de adultos 
             $table->integer('num_niños'); // Columna para número de niños
-            $table->boolean('trona')->default(false); // Valor predeterminado false para 'trona'
+            $table->integer('trona'); // Valor predeterminado false para 'trona'
             $table->date('fecha'); // Columna para fecha de la reserva
             $table->time('hora'); // Columna para hora de la reserva
             $table->string('alergias')->nullable(); // Permitir valores nulos para 'alergias'
             // Agrega otras columnas según sea necesario
             $table->string('estado')->default('reservado');
+            $table->integer('codigo');
             $table->timestamps(); // Columnas para las marcas de tiempo created_at y updated_at
         });
     }

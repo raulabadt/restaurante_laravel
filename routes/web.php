@@ -23,6 +23,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/reserve_cancel', function () {
+    return view('reserve_cancel');
+});
+
 Route::get('/reserve', function () {
     return view('reserve');
 });

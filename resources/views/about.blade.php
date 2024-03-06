@@ -38,7 +38,7 @@
         </div>
     </div>
 </section>
-<section class="w-full py-12 md:py-24 lg:py-32">
+<section class="w-full py-12 md:py-24 lg:py-32 xl:py-40">
     <div class="container grid items-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div class="space-y-3">
             <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -60,7 +60,7 @@
         </div>
     </div>
 </section>
-<section class="w-full py-12 md:py-24 lg:py-32">
+<section class="w-full py-12 md:py-24 lg:py-32 xl:py-40">
     <div class="container grid items-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div class="space-y-3">
             <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -83,7 +83,7 @@
         </div>
     </div>
 </section>
-<section class="w-full py-12 md:py-24 lg:py-32">
+<section class="w-full py-12 md:py-24 lg:py-32 xl:py-40">
     <div class="container grid items-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div class="space-y-3">
             <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
