@@ -14,6 +14,8 @@ use App\Http\Controllers\ReservaController;
 |
 */
 Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('enviar.reserva');
+Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('cancelar.reserva');
+
 
 Route::get('/', function () {
     return view('homepage');

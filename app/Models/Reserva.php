@@ -34,7 +34,7 @@ class Reserva extends Model
         'hora' => 'datetime:H:i', // Formato 'hora:minutos'
         'alergias' => 'string',
         'estado' => 'string',
-        'codigo' => 'integer'
+        'codigo' => 'string'
     ];
 }
 

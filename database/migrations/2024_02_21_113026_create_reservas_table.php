@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('alergias')->nullable(); // Permitir valores nulos para 'alergias'
             // Agrega otras columnas según sea necesario
             $table->string('estado')->default('reservado');
-            $table->integer('codigo');
+            $table->string('codigo')->nullable();
             $table->timestamps(); // Columnas para las marcas de tiempo created_at y updated_at
         });
     }
