@@ -14,6 +14,7 @@ class Reserva extends Model
     protected $fillable = [
         'nombre',
         'mail',
+        'telf',
         'num_adultos',
         'num_niños',
         'trona',
@@ -27,6 +28,7 @@ class Reserva extends Model
     protected $casts = [
         'nombre' => 'string',
         'mail' => 'string',
+        'telf' => 'string',
         'num_adultos' => 'integer',
         'num_niños' => 'integer',
         'trona' => 'integer',

@@ -33,6 +33,10 @@
                 <input type="text" id="mail" name="mail" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Introduce el mail" required>
             </div>
             <div class="space-y-2">
+                <label for="telf" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Numero de telefono</label>
+                <input type="text" id="telf" name="telf" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Numero de telefono" required>
+            </div>
+            <div class="space-y-2">
                 <label for="adultos" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Número de adultos</label>
                 <input type="number" id="adultos" name="adultos" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="0" required>
             </div>
@@ -56,19 +60,6 @@
                 <label for="alergias" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Alergias ó intolerancias</label>
                 <textarea id="alergias" name="alergias" class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]" placeholder="Alergias ó intolerancias" required></textarea>
             </div>
-           
-
-            <!-- <div class="space-y-2">
-    <label class="text-sm font-medium leading-none">Selecciona la mesa en la que quieres comer:</label>
-    <img src="http://localhost/restaurante_laravel/resources/views/images/plano_restaurante.jpg" alt="Plano del restaurante" width="600" usemap="#mesas">
-    <map name="mesas">
-        <area shape="RECTANGLE" coords="48,121,277,223" alt="Mesa 1" href="#mesa1" style="background-color: rgba(255, 0, 0, 0.3);">
-        <area shape="RECTANGLE" coords="327,119,594,239" alt="Mesa 2" href="#mesa2" style="background-color: rgba(0, 255, 0, 0.3);">
-        <area shape="RECTANGLE" coords="691,127,1074,237" alt="Mesa 3" href="#mesa3" style="background-color: rgba(0, 0, 255, 0.3);">
-        <area shape="RECTANGLE" coords="37,367,321,482" alt="Mesa 4" href="#mesa4" style="background-color: rgba(255, 255, 0, 0.3);">
-        <area shape="RECTANGLE" coords="386,357,655,489" alt="Mesa 5" href="#mesa5" style="background-color: rgba(255, 0, 255, 0.3);">
-    </map>
-</div> -->
 
             <button type="submit" class="flex items-center bg-orange-500 gap-1 px-4 py-2 cursor-pointer text-gray-800 font-semibold tracking-widest rounded-md duration-300 hover:gap-2 hover:translate-x-3">
                 Reservar
@@ -84,17 +75,7 @@
             </a>
 
         </form>
-        <!-- <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                document.querySelector("img[usemap]").addEventListener("click", function(event) {
-                    var areaClicked = event.target;
-                    if (areaClicked.tagName === "AREA") {
-                        document.getElementById("mesaSeleccionada").value = areaClicked.getAttribute("alt");
-                    }
-                });
-            });
-        </script> -->
-       
+     
     </div>
 </div>
 

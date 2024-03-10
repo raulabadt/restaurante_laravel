@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id(); // Columna de clave primaria autoincremental
             $table->string('nombre');// Columna para nombre y apellidos
             $table->string('mail'); 
+            $table->string('telf'); 
             $table->integer('num_adultos');// Columna para número de adultos 
             $table->integer('num_niños'); // Columna para número de niños
             $table->integer('trona'); // Valor predeterminado false para 'trona'
@@ -25,6 +26,10 @@ return new class extends Migration
             $table->string('estado')->default('reservado');
             $table->string('codigo')->nullable();
             $table->timestamps(); // Columnas para las marcas de tiempo created_at y updated_at
+            
+            
+            // Restricción única para hora en la misma fecha
+            $table->unique(['fecha', 'hora']);
         });
     }
 

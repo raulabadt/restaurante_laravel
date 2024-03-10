@@ -15,6 +15,7 @@ use App\Http\Controllers\ReservaController;
 */
 Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('enviar.reserva');
 Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('cancelar.reserva');
+Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 
 
 Route::get('/', function () {
@@ -23,6 +24,10 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     return view('contact');
+});
+
+Route::get('/whitelist', function () {
+    return view('whitelist');
 });
 
 Route::get('/reserve_cancel', function () {
@@ -45,6 +50,16 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
+Route::get('/reserve_correcta', function () {
+    return view('reserve_correcta');
+});
 
+Route::get('/reserve_cancel_correcta', function(){
+    return view('reserve_cancel_correcta');
+});
+
+Route::get('/cod_no_existe',function(){
+    return view('cod_no_existe');
+});
 
 
