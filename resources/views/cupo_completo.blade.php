@@ -21,8 +21,8 @@
     <div class="container mx-auto py-12">
         <div class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div class="p-4">
-                <h1 class="text-3xl font-bold text-center mb-4">¡Codigo de reserva no existe!</h1>
-                
+                <h1 class="text-3xl font-bold text-center mb-4">¡Estamos llenos!</h1>
+                <p class="text-gray-700 text-center mb-6">Gracias por intentarlo, pruebe otro dia.</p>
                 <div class="flex justify-center">
                     <a href="http://127.0.0.1:8000/" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-block">Volver al inicio</a>
                 </div>

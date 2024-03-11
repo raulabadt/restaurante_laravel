@@ -52,14 +52,22 @@ Route::get('/menu', function () {
 
 Route::get('/reserve_correcta', function () {
     return view('reserve_correcta');
-});
+})->name('reserve_correcta');
 
 Route::get('/reserve_cancel_correcta', function(){
     return view('reserve_cancel_correcta');
-});
+})->name('reserve_cancel_correcta');
 
 Route::get('/cod_no_existe',function(){
     return view('cod_no_existe');
+})->name('cod_no_existe');
+
+
+
+Route::get('/cupo_completo',function(){
+    return view('cupo_completo');
+})->name('cupo_completo');
+
+Route::get('/dashboard',function(){
+    return view('dashboard');
 });
-
-
