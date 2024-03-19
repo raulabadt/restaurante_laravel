@@ -9,34 +9,8 @@
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
-    <!-- Sidebar -->
-    <div class="flex h-screen">
-        <aside class="bg-gray-800 w-64">
-            <div class="p-6">
-                <!-- Logo / Nombre de la aplicación -->
-                <h1 class="text-white text-lg font-semibold">Mi Aplicación</h1>
-                <div class="mt-4">
-                    <!-- Opciones del menú -->
-                    <ul>
-                        <li class="mb-4">
-                            <!-- Clase 'bg-gray-900' para resaltar la pestaña activa -->
-                            <a href="/dashboard" class="text-gray-300 hover:text-white block py-2 px-4 {{ Request::is('cpanel*') ? 'bg-gray-900' : '' }}{{ Request::is('cpanel*') ? 'text-red-500' : '' }} hover:bg-red-500 hover:text-white">CPanel</a>
-                        </li>
-                        </li>
-                        <li class="mb-4">
-                            <!-- Clase 'bg-gray-900' para resaltar la pestaña activa -->
-                            <a href="#" class="text-gray-300 block py-2 px-4 {{ Request::is('menu*') ? 'bg-gray-900' : '' }} {{ Request::is('menu*') ? 'text-red-500' : '' }} hover:bg-red-500 hover:text-white">Menú</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Botón de cierre de sesión -->
-            <div class="absolute bottom-0 w-full">
-                <button class="w-full text-white bg-gray-700 py-3">Cerrar sesión</button>
-            </div>
-        </aside>
-
+@include('components.dashboard')
+ 
         <!-- Content -->
         <main class="flex-1 p-10">
 
@@ -63,6 +37,22 @@
                             <th class="border border-gray-300 px-4 py-2">Cod Cancelacion</th>
                         </tr>
                     </thead>
+
+                    @foreach ($datos as $dato)
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->id }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->nombre }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->mail }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->telf }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->num_adultos }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->num_niños }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->trona }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->fecha }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->hora }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->alergias }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->estado }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $dato->codigo }}</td>
+
+                    @endforeach
                     <tbody id="table-body">
                         <!-- Aquí se agregarán las filas de la tabla dinámicamente desde JavaScript -->
                     </tbody>
@@ -71,7 +61,7 @@
         </main>
     </div>
 
-    <script>
+    <!-- <script>
         // Datos de ejemplo para la tabla
         const data = [
             { id: 1, nombre: "Producto 1", mail: "raulabadtorralba@gmail.com" },
@@ -116,7 +106,7 @@
             });
             renderTable(filteredData);
         });
-    </script>
+    </script> -->
 
 </body>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Http\Controllers\ReservaController;
 Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('enviar.reserva');
 Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('cancelar.reserva');
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
+Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
+
 
 
 Route::get('/', function () {
@@ -68,6 +71,13 @@ Route::get('/cupo_completo',function(){
     return view('cupo_completo');
 })->name('cupo_completo');
 
+
 Route::get('/dashboard',function(){
     return view('dashboard');
 });
+
+
+Route::get('/create_menu',function(){
+    return view('create_menu');
+});
+

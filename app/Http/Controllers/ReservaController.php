@@ -32,7 +32,7 @@ class ReservaController extends Controller
     $reservas_en_fecha = Reserva::whereDate('fecha', $fecha_reserva)->count();
    
     // Definir el número máximo de reservas permitidas por día
-    $max_reservas_por_dia = 2; // Por ejemplo, 10 reservas por día
+    $max_reservas_por_dia = 70; // Por ejemplo, 70 reservas por día
    
     // Verificar si ya se alcanzó el límite de reservas para hoy
     if ($reservas_en_fecha >= $max_reservas_por_dia) {
@@ -110,6 +110,5 @@ class ReservaController extends Controller
         }
     }
 
-
-
+   
 }
