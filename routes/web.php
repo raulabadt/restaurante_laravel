@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('envia
 Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('cancelar.reserva');
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
+Route::get('/create_menu', [MenuController::class, 'index'])->name('create_menu.index');
+Route::post('/create_menu', [MenuController::class, 'actualizarMenu'])->name('create_menu.actualizarMenu');
 
 
 

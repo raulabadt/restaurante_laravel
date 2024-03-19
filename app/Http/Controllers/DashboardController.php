@@ -14,4 +14,8 @@ class DashboardController extends Controller
         // Pasar los datos a la vista
         return view('cpanel', compact('datos'));
     }
+
+   
+
+  
 }
