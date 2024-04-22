@@ -5,6 +5,7 @@ use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +20,8 @@ Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('envia
 Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('cancelar.reserva');
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
-Route::get('/create_menu', [MenuController::class, 'index'])->name('create_menu.index');
-Route::post('/create_menu', [MenuController::class, 'actualizarMenu'])->name('create_menu.actualizarMenu');
+Route::post('/create_menu', [MenuController::class, 'store'])->name('menu.store');
+Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 
 
 
@@ -52,9 +53,13 @@ Route::get('/take_away', function () {
     return view('take_away');
 });
 
-Route::get('/menu', function () {
-    return view('menu');
-});
+
+
+
+
+Route::get('/create_menu', function () {
+    return view('create_menu');
+})->name('create_menu');
 
 Route::get('/reserve_correcta', function () {
     return view('reserve_correcta');
@@ -75,12 +80,10 @@ Route::get('/cupo_completo',function(){
 })->name('cupo_completo');
 
 
-Route::get('/dashboard',function(){
-    return view('dashboard');
-});
 
 
-Route::get('/create_menu',function(){
-    return view('create_menu');
-});
+
+
+
+
 

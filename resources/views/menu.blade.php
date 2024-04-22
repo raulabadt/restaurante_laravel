@@ -21,14 +21,12 @@
 
 <section class="py-12 md:py-24 lg:py-32">
 
-
-
   <section class="flex items-center justify-center p-8 bg-orange-400">
       
           <div class="w-full max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
               <div class="text-center">
               <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Menú del Día</h2>
-          
+                
                   <div class="mt-10">
                       <dl class="space-y-10">
                           <div class="relative">
@@ -36,37 +34,54 @@
                                   <div class="text-red-500 font-bold">Primeros</div>
                               </dt>
                               <dd class="mt-2 text-base text-gray-900">
-                                  <ul>
-                                      <li>Plato del día 1</li>
-                                      <li>Plato del día 2</li>
-                                      <li>Plato del día 3</li>
-                                      <!-- Agrega más platos del día aquí si es necesario -->
-                                  </ul>
+                              @foreach ($menus as $menu)
+                                    <tr>
+                                        <td class="border border-gray-300 px-4 py-2">
+                                            @foreach ($menu->primeros as $plato)
+                                                {{ $plato }}<br>
+                                            @endforeach
+                                        </td>
+                                       
+                                    </tr>
+                                @endforeach
                               </dd>
                           </div>
                           <div class="relative">
                               <dt>
                                   <div class="text-red-500 font-bold">Segundos</div>
+                                  @foreach ($menus as $menu)
+                                    <tr>
+                                     
+                                        <td class="border border-gray-300 px-4 py-2">
+                                            @foreach ($menu->segundos as $plato)
+                                                {{ $plato }}<br>
+                                            @endforeach
+                                        </td>
+                                       
+                                    </tr>
+                                @endforeach
                               </dt>
                               <dd class="mt-2 text-base text-gray-900">
-                                  <ul>
-                                      <li>Entrada 1</li>
-                                      <li>Entrada 2</li>
-                                      <li>Entrada 3</li>
-                                      <!-- Agrega más entradas aquí si es necesario -->
-                                  </ul>
+                             
                               </dd>
                           </div>
                           <div class="relative">
                               <dt>
                                   <div class="text-red-500 font-bold">Postres</div>
+                                  @foreach ($menus as $menu)
+                                    <tr>
+                                       
+                                        <td class="border border-gray-300 px-4 py-2">
+                                            @foreach ($menu->postres as $plato)
+                                                {{ $plato }}<br>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                @endforeach
                               </dt>
                               <dd class="mt-2 text-base text-gray-900">
-                                  <ul>
-                                      <li>Plato Principal 1</li>
-                                      <li>Plato Principal 2</li>
-                                      <li>Plato Principal 3</li>
-                                      <!-- Agrega más platos principales aquí si es necesario -->
+                              <ul>
+                              
                                   </ul>
                               </dd>
                           </div>

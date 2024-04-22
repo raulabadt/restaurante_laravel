@@ -3,21 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Menu;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function store(Request $request)
     {
-        return view('create_menu');
-    }
+        $menu = new Menu();
 
-    public function actualizarMenu(Request $request)
-    {
-        $primeros = $request->input('primeros', []);
-        $segundos = $request->input('segundos', []);
-        $postres = $request->input('postres', []);
+        // Guardar los primeros platos
+        $menu->primeros = $request->input('primeros');
 
-        return view('create_menu', compact('primeros', 'segundos', 'postres'));
+        // Guardar los segundos platos
+        $menu->segundos = $request->input('segundos');
+
+        // Guardar los postres
+        $menu->postres = $request->input('postres');
+
+        // Guardar el menú en la base de datos
+        $menu->save();
+
         
+
+        // Redirigir a alguna ruta o devolver una respuesta
+        return redirect()->route('create_menu')->with('message', '¡Platos añadidos exitosamente!');
+       
     }
+
+    public function create()
+    {
+        $menus = Menu::all();
+       
+       
+        return view('menu', compact('menus'));
+    }
+
+    
 }
+    
+
+    
+
