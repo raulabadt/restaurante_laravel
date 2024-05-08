@@ -9,6 +9,6 @@
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/take_away">Para Llevar</a>
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/menu">Menu</a>
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/reserve">Reservas</a>
-    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/contact">Contacto</a>
+    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/routes/contact">Contacto</a>
   </nav>
 </header>
