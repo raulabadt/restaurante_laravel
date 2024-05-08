@@ -45,7 +45,7 @@ Route::get('/reserve', function () {
     return view('reserve');
 });
 
-Route::get('/about', function () {
+Route::get('/restaurante_laravel/resources/views/about', function () {
     return view('about');
 });
 
