@@ -5,7 +5,7 @@
   </a>
 
   <nav class="flex items-center space-x-4">
-    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/about">Nosotros</a>
+    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/restaurante_laravel/resources/views/about">Nosotros</a>
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/take_away">Para Llevar</a>
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/menu">Menu</a>
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/reserve">Reservas</a>
