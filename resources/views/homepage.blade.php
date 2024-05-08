@@ -28,19 +28,19 @@
     <section class="flex justify-around items-center p-8 bg-orange-200">
         <!-- Icono 1 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante_laravel/resources/views/iconos/select1.png" alt="Icono 1">
+            <img class="w-20 h-20 mb-2" src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/iconos/select1.png" alt="Icono 1">
             <h2 class="font-semibold text-base text-black"> Elige los platos que más te gusten y pide por teléfono: +1 (555) 123-4567</h2>
         </div>
 
         <!-- Icono 2 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante_laravel/resources/views/iconos/ubicacion1.png" alt="Icono 2">
+            <img class="w-20 h-20 mb-2" src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/iconos/ubicacion1.png" alt="Icono 2">
             <p class="font-semibold text-base text-black">Recógelo en nuestro restaurante</p>
         </div>
 
         <!-- Icono 3 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="http://localhost/restaurante_laravel/resources/views/iconos/reloj2.png" alt="Icono 3">
+            <img class="w-20 h-20 mb-2" src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/iconos/reloj2.png" alt="Icono 3">
             <p class="font-semibold text-base text-black">Disfrútalo en tu casa</p>
         </div>
     </section>
@@ -110,7 +110,7 @@
    
     <!-- Sección 3 -->
     <section class="relative bg-gray-200 h-96 overflow-hidden">
-    <img class="w-full h-full object-cover" src="http://localhost/restaurante_laravel/resources/views/images/huevosrotos1.jpg" alt="Mi Foto">
+    <img class="w-full h-full object-cover" src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/huevosrotos1.jpg" alt="Mi Foto">
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
         <h2 class="text-4xl font-extrabold text-gray-800 mb-2">Especialidades de la casa</h2>
         <div class="w-16 border-b-2 border-gray-800 mx-auto mb-6"></div>
