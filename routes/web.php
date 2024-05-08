@@ -25,11 +25,11 @@ Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 
 
 
-Route::get('/', function () {
+Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/', function () {
     return view('homepage');
 });
 
-Route::get('/contact', function () {
+Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/contact', function () {
     return view('contact');
 });
 
