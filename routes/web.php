@@ -45,7 +45,7 @@ Route::get('/reserve', function () {
     return view('reserve');
 });
 
-Route::get('/resources/views/about', function () {
+Route::get('/about', function () {
     return view('about');
 });
 
