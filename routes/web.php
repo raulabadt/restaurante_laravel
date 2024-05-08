@@ -25,7 +25,7 @@ Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 
 
 
-Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/', function () {
+Route::get('/', function () {
     return view('homepage');
 });
 
