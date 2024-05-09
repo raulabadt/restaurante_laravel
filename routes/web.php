@@ -43,7 +43,7 @@ Route::get('/reserve_cancel', function () {
 
 Route::get('/reserve', function () {
     return view('reserve');
-});
+})->name('reserve');
 
 Route::get('/about', function () {
     return view('about');
@@ -51,7 +51,7 @@ Route::get('/about', function () {
 
 Route::get('/take_away', function () {
     return view('take_away');
-});
+})->name('take_away');
 
 
 
