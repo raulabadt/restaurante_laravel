@@ -30,10 +30,10 @@
         </div>
         <div class="grid gap-4 md:gap-6 lg:gap-10 xl:gap-16">
             <div class="mx-auto flex w-full items-center justify-center p-4 md:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/cocina.jpg" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/cocina.jpg" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 md:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/plato1.jpg" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/plato1.jpg" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
             </div>
         </div>
     </div>
@@ -52,10 +52,10 @@
         </div>
         <div class="grid w-full grid-cols-1 items-stretch justify-center divide-y max-w-3xl mx-auto">
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/puestoCalle.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/puestoCalle.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/puestoCalle1.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/puestoCalle1.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
         </div>
     </div>
@@ -75,10 +75,10 @@
         </div>
         <div class="grid w-full grid-cols-1 items-stretch justify-center divide-y max-w-3xl mx-auto">
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/comida1.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/comida1.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/comida2.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/comida2.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
         </div>
     </div>
@@ -98,10 +98,10 @@
         </div>
         <div class="grid w-full grid-cols-1 items-stretch justify-center divide-y max-w-3xl mx-auto">
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/calidad.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/calidad.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://localhost/restaurante_laravel/resources/views/images/hospitalidad.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/hospitalidad.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
         </div>
     </div>
