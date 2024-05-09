@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::get('/whitelist', function () {
     return view('whitelist');
