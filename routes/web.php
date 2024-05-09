@@ -27,7 +27,7 @@ Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 
 Route::get('/', function () {
     return view('homepage');
-});
+})->name('homepage');
 
 Route::get('/contact', function () {
     return view('contact');
