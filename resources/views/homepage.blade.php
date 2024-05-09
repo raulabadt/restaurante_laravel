@@ -28,19 +28,19 @@
     <section class="flex justify-around items-center p-8 bg-orange-200">
         <!-- Icono 1 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="{{ asset('images/select1.png') }}?v={{ time() }}" alt="Icono 1">
+            <img class="w-20 h-20 mb-2" src="{{ asset('iconos/select1.png') }}?v={{ time() }}" alt="Icono 1">
             <h2 class="font-semibold text-base text-black"> Elige los platos que más te gusten y pide por teléfono: +1 (555) 123-4567</h2>
         </div>
 
         <!-- Icono 2 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="{{ asset('images/ubicacion1.png') }}?v={{ time() }}" alt="Icono 2">
+            <img class="w-20 h-20 mb-2" src="{{ asset('iconos/ubicacion1.png') }}?v={{ time() }}" alt="Icono 2">
             <p class="font-semibold text-base text-black">Recógelo en nuestro restaurante</p>
         </div>
 
         <!-- Icono 3 -->
         <div class="text-center mb-4">
-            <img class="w-20 h-20 mb-2" src="{{ asset('images/reloj2.png') }}?v={{ time() }}" alt="Icono 3">
+            <img class="w-20 h-20 mb-2" src="{{ asset('iconos/reloj2.png') }}?v={{ time() }}" alt="Icono 3">
             <p class="font-semibold text-base text-black">Disfrútalo en tu casa</p>
         </div>
     </section>
