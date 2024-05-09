@@ -52,10 +52,10 @@
         </div>
         <div class="grid w-full grid-cols-1 items-stretch justify-center divide-y max-w-3xl mx-auto">
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/puestoCalle.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="{{ asset('images/puestoCalle.jpg.') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/puestoCalle1.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="{{ asset('images/puestoCalle1.jpg') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
         </div>
     </div>
@@ -75,10 +75,10 @@
         </div>
         <div class="grid w-full grid-cols-1 items-stretch justify-center divide-y max-w-3xl mx-auto">
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/comida1.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="{{ asset('images/comida1.jpg') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/comida2.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="{{ asset('images/comida2.jpg') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
         </div>
     </div>
@@ -98,10 +98,10 @@
         </div>
         <div class="grid w-full grid-cols-1 items-stretch justify-center divide-y max-w-3xl mx-auto">
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/calidad.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="{{ asset('images/calidad.jpg') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/hospitalidad.jpg" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="{{ asset('images/hospitalidad.jpg') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
         </div>
     </div>
