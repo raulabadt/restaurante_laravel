@@ -6,9 +6,9 @@
 
   <nav class="flex items-center space-x-4">
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/about.blade.php">Nosotros</a>
-    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/take_away">Para Llevar</a>
-    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/menu">Menu</a>
-    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/reserve">Reservas</a>
-    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="/contact">Contacto</a>
+    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/take_away.blade.php">Para Llevar</a>
+    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/menu.blade.php">Menu</a>
+    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/reserve.blade.php">Reservas</a>
+    <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/contact.blade.php">Contacto</a>
   </nav>
 </header>

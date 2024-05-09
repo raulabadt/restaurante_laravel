@@ -21,7 +21,7 @@ Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
 Route::post('/create_menu', [MenuController::class, 'store'])->name('menu.store');
-Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
+Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/menu.blade.php', [MenuController::class, 'create'])->name('menu.create');
 
 
 
@@ -29,7 +29,7 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/contact', function () {
+Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/contact.blade.php', function () {
     return view('contact');
 });
 
@@ -41,7 +41,7 @@ Route::get('/reserve_cancel', function () {
     return view('reserve_cancel');
 });
 
-Route::get('/reserve', function () {
+Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/reserve.blade.php', function () {
     return view('reserve');
 });
 
@@ -49,7 +49,7 @@ Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/
     return view('about');
 });
 
-Route::get('/take_away', function () {
+Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/take_away.php', function () {
     return view('take_away');
 });
 
