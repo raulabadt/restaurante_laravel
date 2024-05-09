@@ -29,7 +29,7 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resource/views/contact', function () {
+Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
