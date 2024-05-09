@@ -30,10 +30,10 @@
         </div>
         <div class="grid gap-4 md:gap-6 lg:gap-10 xl:gap-16">
             <div class="mx-auto flex w-full items-center justify-center p-4 md:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/cocina.jpg" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
+                <img src="{{ asset('images/cocina.jpg') }}?v={{ time() }}" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 md:p-8">
-                <img src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/plato1.jpg" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
+                <img src="{{ asset('images/plato1.jpg') }}?v={{ time() }}" width="800" height="400" alt="Restaurante" class="aspect-[2/1] overflow-hidden rounded-xl object-cover object-center">
             </div>
         </div>
     </div>
