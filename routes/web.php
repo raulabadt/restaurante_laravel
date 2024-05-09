@@ -45,7 +45,7 @@ Route::get('/reserve', function () {
     return view('reserve');
 });
 
-Route::get('/about', function () {
+Route::get('http://vps-c71468c0.vps.ovh.net/restaurante_laravel/resources/views/about.blade.php', function () {
     return view('about');
 });
 
