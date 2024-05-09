@@ -11,7 +11,7 @@
 <body class="bg-gray-100  text-gray-800 ">
     @include('components.header')
     <section class="relative bg-gray-200 h-96 overflow-hidden">
-        <img class="w-full h-full object-cover"  src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/barra.png" alt="Mi Foto">
+        <img class="w-full h-full object-cover"  src="/barra.png" alt="Mi Foto">
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
             <img class="w-32 h-32 mx-auto mb-4 rounded-full"  src="http://vps-c71468c0.vps.ovh.net/restaurante_laravel/public/images/takeaway.jpg" alt="Otra Imagen">
             <a href="/take_away" class="relative border hover:border-red-600 duration-500 group cursor-pointer text-sky-50  overflow-hidden h-14 w-56 rounded-md bg-red-800 p-2 flex justify-center items-center font-extrabold">
