@@ -25,7 +25,7 @@
       <div class="grid gap-6 md:grid-cols-2 lg:gap-12">
         <div class="flex flex-col gap-2">
           <img
-            src="{{ asset('images/comida1.jpg.jpg') }}?v={{ time() }}"
+            src="{{ asset('images/comida1.jpg') }}?v={{ time() }}"
             width="600"
             height="400"
             alt="Image"
