@@ -25,7 +25,7 @@
       <div class="grid gap-6 md:grid-cols-2 lg:gap-12">
         <div class="flex flex-col gap-2">
           <img
-            src="http://localhost/restaurante_laravel/resources/views/images/comida1.jpg"
+            src="{{ asset('images/comida1.jpg.jpg') }}?v={{ time() }}"
             width="600"
             height="400"
             alt="Image"
@@ -34,7 +34,7 @@
         </div>
         <div class="flex flex-col gap-2">
           <img
-          src="http://localhost/restaurante_laravel/resources/views/images/comida2.jpg"
+          src="{{ asset('images/comida2.jpg') }}?v={{ time() }}"
             width="600"
             height="400"
             alt="Image"
