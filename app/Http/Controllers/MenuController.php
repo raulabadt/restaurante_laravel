@@ -32,10 +32,10 @@ class MenuController extends Controller
 
     public function create()
     {
-        $menus = Menu::all();
+        // $menus = Menu::all();
        
        
-        return view('menu', compact('menus'));
+        // return view('menu', compact('menus'));
     }
 
     
