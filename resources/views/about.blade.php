@@ -52,7 +52,7 @@
         </div>
         <div class="grid w-full grid-cols-1 items-stretch justify-center divide-y max-w-3xl mx-auto">
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img src="{{ asset('images/puestoCalle.jpg.') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
+                <img src="{{ asset('images/puestoCalle.jpg') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
             </div>
             <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
                 <img src="{{ asset('images/puestoCalle1.jpg') }}?v={{ time() }}" width="600" height="300" alt="Imagen" class="aspect-video overflow-hidden rounded-lg object-contain object-center">
