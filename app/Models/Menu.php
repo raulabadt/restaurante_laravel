@@ -8,19 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
-    protected $table = 'menu';
+  
 
     protected $fillable = [
-        'primeros',
-        'segundos',
-        'postres'
-      
+        'name',
+        'description',
+        'price',
+        'category',
     ];
 
-    protected $casts = [
-        'primeros' => 'array',
-        'segundos' => 'array',
-        'postres' => 'array'
-        
-    ];
 }

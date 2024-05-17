@@ -1,45 +1,70 @@
 <?php
 
+// app/Http/Controllers/MenuController.php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Menu;
+use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
+    public function index()
+    {
+        return Menu::all();
+    }
+
     public function store(Request $request)
     {
-        $menu = new Menu();
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric',
+            'category' => 'required|string|max:255',
+        ]);
 
-        // Guardar los primeros platos
-        $menu->primeros = $request->input('primeros');
+        $menu = Menu::create($request->all());
 
-        // Guardar los segundos platos
-        $menu->segundos = $request->input('segundos');
-
-        // Guardar los postres
-        $menu->postres = $request->input('postres');
-
-        // Guardar el menú en la base de datos
-        $menu->save();
-
-        
-
-        // Redirigir a alguna ruta o devolver una respuesta
-        return redirect()->route('create_menu')->with('message', '¡Platos añadidos exitosamente!');
-       
+        return response()->json($menu, 201);
     }
 
+    public function show($id)
+    {
+        return Menu::findOrFail($id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'sometimes|string|max:255',
+            'description' => 'nullable|string',
+            'price' => 'sometimes|numeric',
+            'category' => 'sometimes|string|max:255',
+        ]);
+
+        $menu = Menu::findOrFail($id);
+        $menu->update($request->all());
+
+        return response()->json($menu, 200);
+    }
+
+    public function destroy($id)
+    {
+        Menu::findOrFail($id)->delete();
+
+        return response()->json(null, 204);
+    }
+
+    // Define the create method
     public function create()
     {
-        $menus = Menu::all();
-       
-       
-        return view('menu', compact('menus'));
+        return view('create_menu');
     }
-
-    
 }
+
+
+
+
     
 
     

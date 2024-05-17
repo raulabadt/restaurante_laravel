@@ -3,78 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Crear Menú</title>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <style>
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        .menu-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px;
+            background-color: #f9f9f9;
+            cursor: grab;
+        }
+        .menu-item.dragging {
+            opacity: 0.5;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    @include('components.dashboard')
-    <h1 class="text-center my-4 text-2xl">TU MENU A TU ANTOJO</h1>
-
-    <div class="flex justify-center">
-        <div class="w-full max-w-md p-4">
-            <div class="bg-white p-4 rounded shadow">
-                <h2 class="text-lg font-bold mb-4">Menu</h2>
-                <form action="{{ route('menu.store') }}" method="post" id="menu-form">
-                    @csrf
-                    <div class="menu-item mb-4">
-                        <h3 class="font-bold mb-2">Primeros</h3>
-                        <div class="checkboxes space-y-2">
-                            <div>
-                                <input type="checkbox" name="primeros[]" value="ensalada" id="ensalada" class="mr-2">
-                                <label for="ensalada">Ensalada</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="primeros[]" value="sopa" id="sopa" class="mr-2">
-                                <label for="sopa">Sopa</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="primeros[]" value="pasta" id="pasta" class="mr-2">
-                                <label for="pasta">Pasta</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item mb-4">
-                        <h3 class="font-bold mb-2">Segundos</h3>
-                        <div class="checkboxes space-y-2">
-                            <div>
-                                <input type="checkbox" name="segundos[]" value="pollo" id="pollo" class="mr-2">
-                                <label for="pollo">Pollo</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="segundos[]" value="pescado" id="pescado" class="mr-2">
-                                <label for="pescado">Pescado</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="segundos[]" value="carne" id="carne" class="mr-2">
-                                <label for="carne">Carne</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item mb-4">
-                        <h3 class="font-bold mb-2">Postres</h3>
-                        <div class="checkboxes space-y-2">
-                            <div>
-                                <input type="checkbox" name="postres[]" value="helado" id="helado" class="mr-2">
-                                <label for="helado">Helado</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="postres[]" value="pastel" id="pastel" class="mr-2">
-                                <label for="pastel">Pastel</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="postres[]" value="frutas" id="frutas" class="mr-2">
-                                <label for="frutas">Frutas</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Publicar
-                        </button>
-                    </div>
-                </form>
+<body>
+    <div class="container">
+        <h1>Restaurant Menu Builder</h1>
+        <div id="menu-builder">
+            <div class="menu-items" id="menu-items">
+                <!-- Los elementos del menú se cargarán aquí -->
             </div>
+            <button id="save-menu">Guardar Menú</button>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let draggedItem = null;
+
+            fetch('/api/menus')
+                .then(response => response.json())
+                .then(data => {
+                    const menuItemsContainer = document.getElementById('menu-items');
+                    data.forEach(item => {
+                        const menuItem = document.createElement('div');
+                        menuItem.classList.add('menu-item');
+                        menuItem.setAttribute('data-id', item.id);
+                        menuItem.innerHTML = `
+                            <h2>${item.name}</h2>
+                            <p>${item.description}</p>
+                            <p>${item.price}</p>
+                            <p>${item.category}</p>
+                        `;
+                        menuItemsContainer.appendChild(menuItem);
+                        addDragAndDropEvents(menuItem);
+                    });
+                });
+
+            function addDragAndDropEvents(menuItem) {
+                menuItem.addEventListener('dragstart', function () {
+                    draggedItem = menuItem;
+                    setTimeout(function () {
+                        menuItem.classList.add('dragging');
+                    }, 0);
+                });
+
+                menuItem.addEventListener('dragend', function () {
+                    setTimeout(function () {
+                        draggedItem = null;
+                        menuItem.classList.remove('dragging');
+                    }, 0);
+                });
+
+                menuItem.addEventListener('dragover', function (e) {
+                    e.preventDefault();
+                });
+
+                menuItem.addEventListener('drop', function (e) {
+                    e.preventDefault();
+                    if (draggedItem) {
+                        this.parentNode.insertBefore(draggedItem, this.nextSibling);
+                    }
+                });
+            }
+
+            document.getElementById('save-menu').addEventListener('click', function () {
+                const menuItems = document.querySelectorAll('.menu-item');
+                const orderedItems = Array.from(menuItems).map(item => item.getAttribute('data-id'));
+                fetch('/api/menus', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ order: orderedItems }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Menú guardado:', data);
+                })
+                .catch(error => {
+                    console.error('Error al guardar el menú:', error);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -20,9 +20,10 @@ Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('envia
 Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('cancelar.reserva');
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
-Route::post('/create_menu', [MenuController::class, 'store'])->name('menu.store');
-Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
+//Route::post('/create_menu', [MenuController::class, 'store'])->name('menu.store');
+//Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 
+Route::get('/create_menu', [MenuController::class, 'create'])->name('menu.create');
 
 
 Route::get('/', function () {
@@ -53,7 +54,9 @@ Route::get('/take_away', function () {
     return view('take_away');
 })->name('take_away');
 
-
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');
 
 
 
