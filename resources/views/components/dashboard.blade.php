@@ -35,7 +35,7 @@
         </aside>
 
         <!-- Content -->
-        <main class="flex-1 p-10">
+        
 
      
 
