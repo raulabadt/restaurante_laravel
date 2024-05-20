@@ -12,7 +12,7 @@
 
     <!-- Sidebar -->
     <div class="flex h-screen overflow-hidden">
-        <aside class="bg-gray-800 w-64 flex flex-col justify-between">
+        <aside class="bg-gray-800 w-64 flex flex-col justify-between md:w-1/4 lg:w-1/5 xl:w-1/6">
             <div class="p-6">
                 <!-- Logo / Nombre de la aplicación -->
                 <h1 class="text-white text-lg font-semibold">Mi Aplicación</h1>
@@ -35,12 +35,12 @@
         </aside>
 
         <!-- Content -->
-        <main class="flex-1 p-10 overflow-auto">
+        <main class="flex-1 p-4 md:p-10 overflow-auto">
             <div class="container mx-auto px-4 py-8">
                 <h1 class="text-2xl font-bold mb-6">Gestionar Menú del Restaurante</h1>
 
                 <h2 class="text-xl font-semibold mb-4">Primeros</h2>
-                <div class="menu-item mb-4 bg-white p-6 rounded shadow-md">
+                <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
                     <form method="POST" class="space-y-4">
                         <input type="text" name="nombre" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
                         <textarea name="descripcion" placeholder="Descripción" class="w-full p-2 border border-gray-300 rounded"></textarea>
@@ -53,7 +53,7 @@
                 </div>
 
                 <h2 class="text-xl font-semibold mb-4">Segundos</h2>
-                <div class="menu-item mb-4 bg-white p-6 rounded shadow-md">
+                <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
                     <form method="POST" class="space-y-4">
                         <input type="text" name="nombre" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
                         <textarea name="descripcion" placeholder="Descripción" class="w-full p-2 border border-gray-300 rounded"></textarea>
@@ -66,7 +66,7 @@
                 </div>
 
                 <h2 class="text-xl font-semibold mb-4">Postres</h2>
-                <div class="menu-item mb-4 bg-white p-6 rounded shadow-md">
+                <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
                     <form method="POST" class="space-y-4">
                         <input type="text" name="nombre" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
                         <textarea name="descripcion" placeholder="Descripción" class="w-full p-2 border border-gray-300 rounded"></textarea>
@@ -79,7 +79,7 @@
                 </div>
 
                 <h2 class="text-xl font-semibold mb-4">Añadir Nuevo Plato</h2>
-                <form method="POST" class="space-y-4 bg-white p-6 rounded shadow-md">
+                <form method="POST" class="space-y-4 bg-white p-4 md:p-6 rounded shadow-md">
                     <input type="text" name="nombre" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
                     <textarea name="descripcion" placeholder="Descripción" class="w-full p-2 border border-gray-300 rounded"></textarea>
                     <input type="number" name="precio" placeholder="Precio" class="w-full p-2 border border-gray-300 rounded">
