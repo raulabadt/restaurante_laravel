@@ -17,7 +17,7 @@
             <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
                 <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
                 <p>{{ $plato->descripcion }}</p>
-                <p class="text-gray-600">{{ $plato->precio }} €</p>
+                
             </div>
             @endforeach
         </div>
@@ -28,7 +28,7 @@
             <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
                 <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
                 <p>{{ $plato->descripcion }}</p>
-                <p class="text-gray-600">{{ $plato->precio }} €</p>
+                
             </div>
             @endforeach
         </div>
@@ -39,6 +39,15 @@
             <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
                 <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
                 <p>{{ $plato->descripcion }}</p>
+                
+            </div>
+            @endforeach
+        </div>
+        <h2 class="text-xl font-semibold mb-4">Precio</h2>
+        <div id="postres-list">
+            @foreach ($postres as $plato)
+            <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
+                
                 <p class="text-gray-600">{{ $plato->precio }} €</p>
             </div>
             @endforeach

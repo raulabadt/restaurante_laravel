@@ -28,7 +28,7 @@
                                 @method('PUT')
                                 <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
                                 <textarea name="descripcion" class="w-full p-2 border border-gray-300 rounded">{{ $menu->descripcion }}</textarea>
-                                <input type="number" name="precio" value="{{ $menu->precio }}" class="w-full p-2 border border-gray-300 rounded">
+                             
                                 <input type="hidden" name="categoria" value="primero">
                                 <div class="flex justify-between">
                                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
@@ -52,7 +52,7 @@
                                 @method('PUT')
                                 <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
                                 <textarea name="descripcion" class="w-full p-2 border border-gray-300 rounded">{{ $menu->descripcion }}</textarea>
-                                <input type="number" name="precio" value="{{ $menu->precio }}" class="w-full p-2 border border-gray-300 rounded">
+                               
                                 <input type="hidden" name="categoria" value="segundo">
                                 <div class="flex justify-between">
                                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
@@ -76,6 +76,28 @@
                                 @method('PUT')
                                 <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
                                 <textarea name="descripcion" class="w-full p-2 border border-gray-300 rounded">{{ $menu->descripcion }}</textarea>
+                              
+                                <input type="hidden" name="categoria" value="postre">
+                                <div class="flex justify-between">
+                                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
+                                    <form action="{{ route('delete_menu', $menu->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('¿Estás seguro?')" class="bg-red-500 text-white px-4 py-2 rounded">Eliminar</button>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                        @endforeach
+                    </div>
+                    <h2 class="text-xl font-semibold mb-4">Precio</h2>
+                    <div id="postres-list">
+                        @foreach ($postres as $menu)
+                        <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
+                            <form action="{{ route('update_menu', $menu->id) }}" method="POST" class="space-y-4">
+                                @csrf
+                                @method('PUT')
+                               
                                 <input type="number" name="precio" value="{{ $menu->precio }}" class="w-full p-2 border border-gray-300 rounded">
                                 <input type="hidden" name="categoria" value="postre">
                                 <div class="flex justify-between">
@@ -91,6 +113,7 @@
                         @endforeach
                     </div>
                 </div>
+               
 
                 <div class="w-full md:w-2/4">
                     <h2 class="text-xl font-semibold mb-4">Añadir Nuevo Plato</h2>
