@@ -6,63 +6,47 @@
     @vite('resources/css/app.css')
     <title>Mi Página Web</title>
 </head>
-<body class="bg-orange-400 text-gray-800">
-    @include('components.header')
+<body class=" bg-orange-400 text-gray-800">
+@include('components.header')
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-6">Menú del Restaurante</h1>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <section class="py-12 md:py-24 lg:py-32">
-            <section class="flex items-center justify-center p-8 bg-orange-400">
-                <div class="w-full max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                    <div class="text-center">
-                        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Menú del Día</h2>
-                        <div class="mt-10">
-                            <dl class="space-y-10">
-                                <div class="relative">
-                                    <dt>
-                                        <div class="text-red-500 font-bold">Primeros</div>
-                                    </dt>
-                                    <dd class="mt-2 text-base text-gray-900">
-                                        <ul class="list-disc list-inside">
-                                            
-                                        </ul>
-                                    </dd>
-                                </div>
-                                <div class="relative">
-                                    <dt>
-                                        <div class="text-red-500 font-bold">Segundos</div>
-                                    </dt>
-                                    <dd class="mt-2 text-base text-gray-900">
-                                        <ul class="list-disc list-inside">
-                                            
-                                        </ul>
-                                    </dd>
-                                </div>
-                                <div class="relative">
-                                    <dt>
-                                        <div class="text-red-500 font-bold">Postres</div>
-                                    </dt>
-                                    <dd class="mt-2 text-base text-gray-900">
-                                        <ul class="list-disc list-inside">
-                                           
-                                        </ul>
-                                    </dd>
-                                </div>
-                                <div class="relative">
-                                    <dt>
-                                        <div class="mt-2 text-3x1 text-gray-900">*****Se incluyen bebidas como vino, cerveza, refrescos, café, agua y pan*****</div>
-                                    </dt>
-                                    <dt>
-                                        <div class="mt-2 text-3x1 font-bold text-gray-900">PRECIO 15,85</div>
-                                    </dt>
-                                </div>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
+        <h2 class="text-xl font-semibold mb-4">Primeros</h2>
+        <div id="primeros-list">
+            @foreach ($primeros as $plato)
+            <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
+                <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
+                <p>{{ $plato->descripcion }}</p>
+                <p class="text-gray-600">{{ $plato->precio }} €</p>
+            </div>
+            @endforeach
+        </div>
+
+        <h2 class="text-xl font-semibold mb-4">Segundos</h2>
+        <div id="segundos-list">
+            @foreach ($segundos as $plato)
+            <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
+                <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
+                <p>{{ $plato->descripcion }}</p>
+                <p class="text-gray-600">{{ $plato->precio }} €</p>
+            </div>
+            @endforeach
+        </div>
+
+        <h2 class="text-xl font-semibold mb-4">Postres</h2>
+        <div id="postres-list">
+            @foreach ($postres as $plato)
+            <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
+                <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
+                <p>{{ $plato->descripcion }}</p>
+                <p class="text-gray-600">{{ $plato->precio }} €</p>
+            </div>
+            @endforeach
+        </div>
     </div>
-    
     @include('components.footer')
 </body>
 </html>
+
+
+

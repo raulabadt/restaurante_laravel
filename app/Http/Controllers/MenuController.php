@@ -1,71 +1,72 @@
 <?php
 
-// app/Http/Controllers/MenuController.php
-
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
 use Illuminate\Http\Request;
+use App\Models\Menu;
 
 class MenuController extends Controller
 {
+    // Método para mostrar la vista de gestión del menú
     public function index()
     {
-        return Menu::all();
+        $primeros = Menu::where('categoria', 'primero')->get();
+        $segundos = Menu::where('categoria', 'segundo')->get();
+        $postres = Menu::where('categoria', 'postre')->get();
+
+        return view('create_menu', compact('primeros', 'segundos', 'postres'));
     }
 
+    // Método para añadir un nuevo menú
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'price' => 'required|numeric',
-            'category' => 'required|string|max:255',
+            'nombre' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'precio' => 'required|numeric',
+            'categoria' => 'required|in:primero,segundo,postre',
         ]);
 
-        $menu = Menu::create($request->all());
+        Menu::create($request->all());
 
-        return response()->json($menu, 201);
+        return redirect()->route('create_menu')->with('success', 'Plato añadido exitosamente');
     }
 
-    public function show($id)
-    {
-        return Menu::findOrFail($id);
-    }
-
+    // Método para actualizar un menú existente
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'sometimes|string|max:255',
-            'description' => 'nullable|string',
-            'price' => 'sometimes|numeric',
-            'category' => 'sometimes|string|max:255',
+            'nombre' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'precio' => 'required|numeric',
+            'categoria' => 'required|in:primero,segundo,postre',
         ]);
 
-        $menu = Menu::findOrFail($id);
+        $menu = Menu::find($id);
         $menu->update($request->all());
 
-        return response()->json($menu, 200);
+        return redirect()->route('create_menu')->with('success', 'Plato actualizado exitosamente');
     }
 
+    // Método para eliminar un menú
     public function destroy($id)
     {
-        Menu::findOrFail($id)->delete();
+        $menu = Menu::find($id);
+        $menu->delete();
 
-        return response()->json(null, 204);
+        return redirect()->route('create_menu')->with('success', 'Plato eliminado exitosamente');
     }
 
-    // Define the create method
-    public function create()
+    // Método para mostrar el menú público
+    public function publicMenu()
     {
-        return view('create_menu');
+        $primeros = Menu::where('categoria', 'primero')->get();
+        $segundos = Menu::where('categoria', 'segundo')->get();
+        $postres = Menu::where('categoria', 'postre')->get();
+
+        return view('menu', compact('primeros', 'segundos', 'postres'));
     }
 }
 
 
-
-
-    
-
-    
 

@@ -9,5 +9,6 @@
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="{{ route('menu') }}">Menu</a>
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="{{ route('reserve') }}">Reservas</a>
     <a class="text-gray-500 hover:text-gray-50 text-base md:text-lg" href="{{ route('contact') }}">Contacto</a>
-</nav>
+    
+  </nav>
 </header>
