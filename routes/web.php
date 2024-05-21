@@ -20,19 +20,13 @@ Route::post('/enviar-reserva', [ReservaController::class, 'store'])->name('envia
 Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('cancelar.reserva');
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
-//Route::post('/create_menu', [MenuController::class, 'store'])->name('menu.store');
-//Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
-
-//Route::get('/create_menu', [MenuController::class, 'create'])->name('menu.create');
 
 // Ruta para mostrar la vista de gestión del menú
 Route::get('/create_menu', [MenuController::class, 'index'])->name('create_menu');
-
 // Rutas para las operaciones CRUD
 Route::post('/menus', [MenuController::class, 'store'])->name('add_menu');
 Route::put('/menus/{id}', [MenuController::class, 'update'])->name('update_menu');
 Route::delete('/menus/{id}', [MenuController::class, 'destroy'])->name('delete_menu');
-
 // Ruta para mostrar el menú público
 Route::get('/menu', [MenuController::class, 'publicMenu'])->name('menu');
 
@@ -64,16 +58,6 @@ Route::get('/take_away', function () {
     return view('take_away');
 })->name('take_away');
 
-// Route::get('/menu', function () {
-//     return view('menu');
-// })->name('menu');
-
-
-
-// Route::get('/create_menu', function () {
-//     return view('create_menu');
-// })->name('create_menu');
-
 Route::get('/reserve_correcta', function () {
     return view('reserve_correcta');
 })->name('reserve_correcta');
@@ -86,17 +70,6 @@ Route::get('/cod_no_existe',function(){
     return view('cod_no_existe');
 })->name('cod_no_existe');
 
-
-
 Route::get('/cupo_completo',function(){
     return view('cupo_completo');
 })->name('cupo_completo');
-
-
-
-
-
-
-
-
-

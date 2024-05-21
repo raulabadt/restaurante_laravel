@@ -27,8 +27,7 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
-                                <textarea name="descripcion" class="w-full p-2 border border-gray-300 rounded">{{ $menu->descripcion }}</textarea>
-                             
+
                                 <input type="hidden" name="categoria" value="primero">
                                 <div class="flex justify-between">
                                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
@@ -51,7 +50,6 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
-                                <textarea name="descripcion" class="w-full p-2 border border-gray-300 rounded">{{ $menu->descripcion }}</textarea>
                                
                                 <input type="hidden" name="categoria" value="segundo">
                                 <div class="flex justify-between">
@@ -75,8 +73,7 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
-                                <textarea name="descripcion" class="w-full p-2 border border-gray-300 rounded">{{ $menu->descripcion }}</textarea>
-                              
+
                                 <input type="hidden" name="categoria" value="postre">
                                 <div class="flex justify-between">
                                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
@@ -113,14 +110,12 @@
                         @endforeach
                     </div>
                 </div>
-               
 
                 <div class="w-full md:w-2/4">
                     <h2 class="text-xl font-semibold mb-4">Añadir Nuevo Plato</h2>
                     <form action="{{ route('add_menu') }}" method="POST" class="space-y-4 bg-white p-4 md:p-6 rounded shadow-md">
                         @csrf
                         <input type="text" name="nombre" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
-                        <textarea name="descripcion" placeholder="Descripción" class="w-full p-2 border border-gray-300 rounded"></textarea>
                         <input type="number" name="precio" placeholder="Precio" class="w-full p-2 border border-gray-300 rounded">
                         <select name="categoria" class="w-full p-2 border border-gray-300 rounded">
                             <option value="primero">Primero</option>

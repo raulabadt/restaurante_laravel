@@ -22,7 +22,6 @@ class MenuController extends Controller
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
-            'descripcion' => 'required|string',
             'precio' => 'required|numeric',
             'categoria' => 'required|in:primero,segundo,postre',
         ]);
@@ -37,7 +36,6 @@ class MenuController extends Controller
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
-            'descripcion' => 'required|string',
             'precio' => 'required|numeric',
             'categoria' => 'required|in:primero,segundo,postre',
         ]);

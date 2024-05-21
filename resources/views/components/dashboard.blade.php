@@ -34,11 +34,6 @@
             </div>
         </aside>
 
-        <!-- Content -->
-        
-
-     
-
 </body>
 
 </html>

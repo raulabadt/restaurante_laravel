@@ -9,12 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    
   public function up()
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->text('descripcion');
             $table->decimal('precio', 8, 2);
             $table->enum('categoria', ['primero', 'segundo', 'postre']);
             $table->timestamps();

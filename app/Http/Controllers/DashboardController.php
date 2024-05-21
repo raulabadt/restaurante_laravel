@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reserva; // Asegúrate de importar tu modelo aquí
+use App\Models\Reserva; 
 
 class DashboardController extends Controller
 {
@@ -15,7 +15,4 @@ class DashboardController extends Controller
         return view('cpanel', compact('datos'));
     }
 
-   
-
-  
 }

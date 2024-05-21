@@ -12,7 +12,7 @@ class ReservaController extends Controller
     public function store(Request $request)
     {   
       
-    //   // Validar los datos recibidos del formulario
+    // Validar los datos recibidos del formulario
     $request->validate([
         'name' => 'required|string',
         'mail' => 'required|string',
