@@ -7,46 +7,51 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
-    // Método para mostrar la vista de gestión del menú
     public function index()
     {
         $primeros = Menu::where('categoria', 'primero')->get();
         $segundos = Menu::where('categoria', 'segundo')->get();
         $postres = Menu::where('categoria', 'postre')->get();
+        $precio_general = Menu::first()->precio_general ?? null;
 
-        return view('create_menu', compact('primeros', 'segundos', 'postres'));
+        return view('create_menu', compact('primeros', 'segundos', 'postres', 'precio_general'));
     }
 
-    // Método para añadir un nuevo menú
     public function store(Request $request)
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
-            'precio' => 'required|numeric',
             'categoria' => 'required|in:primero,segundo,postre',
+            'precio_general' => 'nullable|numeric',
         ]);
 
-        Menu::create($request->all());
+        Menu::create($request->only(['nombre', 'categoria']));
 
-        return redirect()->route('create_menu')->with('success', 'Plato añadido exitosamente');
+        if ($request->has('precio_general')) {
+            Menu::query()->update(['precio_general' => $request->precio_general]);
+        }
+
+        return redirect()->route('create_menu')->with('success', 'Plato añadido y precio general actualizado exitosamente');
     }
 
-    // Método para actualizar un menú existente
     public function update(Request $request, $id)
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
-            'precio' => 'required|numeric',
             'categoria' => 'required|in:primero,segundo,postre',
+            'precio_general' => 'nullable|numeric',
         ]);
 
         $menu = Menu::find($id);
-        $menu->update($request->all());
+        $menu->update($request->only(['nombre', 'categoria']));
 
-        return redirect()->route('create_menu')->with('success', 'Plato actualizado exitosamente');
+        if ($request->has('precio_general')) {
+            Menu::query()->update(['precio_general' => $request->precio_general]);
+        }
+
+        return redirect()->route('create_menu')->with('success', 'Plato actualizado y precio general actualizado exitosamente');
     }
 
-    // Método para eliminar un menú
     public function destroy($id)
     {
         $menu = Menu::find($id);
@@ -55,16 +60,13 @@ class MenuController extends Controller
         return redirect()->route('create_menu')->with('success', 'Plato eliminado exitosamente');
     }
 
-    // Método para mostrar el menú público
     public function publicMenu()
     {
         $primeros = Menu::where('categoria', 'primero')->get();
         $segundos = Menu::where('categoria', 'segundo')->get();
         $postres = Menu::where('categoria', 'postre')->get();
+        $precio_general = Menu::first()->precio_general ?? null;
 
-        return view('menu', compact('primeros', 'segundos', 'postres'));
+        return view('menu', compact('primeros', 'segundos', 'postres', 'precio_general'));
     }
 }
-
-
-

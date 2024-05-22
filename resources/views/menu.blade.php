@@ -60,7 +60,7 @@
         <div id="postres-list">
             @foreach ($postres as $plato)
             <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
-            <h3 class="text-lg font-bold">{{ $plato->precio }} €</h3>
+            <h3 class="text-lg font-bold">{{ $precio_general }} €</h3>
             </div>
             @endforeach
         </div>
