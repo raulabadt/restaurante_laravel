@@ -22,16 +22,11 @@ class MenuController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'categoria' => 'required|in:primero,segundo,postre',
-            'precio_general' => 'nullable|numeric',
         ]);
 
         Menu::create($request->only(['nombre', 'categoria']));
 
-        if ($request->has('precio_general')) {
-            Menu::query()->update(['precio_general' => $request->precio_general]);
-        }
-
-        return redirect()->route('create_menu')->with('success', 'Plato añadido y precio general actualizado exitosamente');
+        return redirect()->route('create_menu')->with('success', 'Plato añadido exitosamente');
     }
 
     public function update(Request $request, $id)
@@ -43,6 +38,11 @@ class MenuController extends Controller
         ]);
 
         $menu = Menu::find($id);
+
+        if (!$menu) {
+            return redirect()->route('create_menu')->with('error', 'Plato no encontrado');
+        }
+
         $menu->update($request->only(['nombre', 'categoria']));
 
         if ($request->has('precio_general')) {
@@ -55,6 +55,11 @@ class MenuController extends Controller
     public function destroy($id)
     {
         $menu = Menu::find($id);
+
+        if (!$menu) {
+            return redirect()->route('create_menu')->with('error', 'Plato no encontrado');
+        }
+
         $menu->delete();
 
         return redirect()->route('create_menu')->with('success', 'Plato eliminado exitosamente');

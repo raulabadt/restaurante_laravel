@@ -25,7 +25,11 @@
                             <form action="{{ route('update_menu', $menu->id) }}" method="POST" class="space-y-4">
                                 @csrf
                                 @method('PUT')
-                                <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
+                                <select name="nombre" class="w-full p-2 border border-gray-300 rounded">
+                                    @foreach ($primeros as $item)
+                                    <option value="{{ $item->nombre }}" {{ $menu->nombre == $item->nombre ? 'selected' : '' }}>{{ $item->nombre }}</option>
+                                    @endforeach
+                                </select>
                                 <input type="hidden" name="categoria" value="primero">
                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
                             </form>
@@ -48,7 +52,11 @@
                             <form action="{{ route('update_menu', $menu->id) }}" method="POST" class="space-y-4">
                                 @csrf
                                 @method('PUT')
-                                <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
+                                <select name="nombre" class="w-full p-2 border border-gray-300 rounded">
+                                    @foreach ($segundos as $item)
+                                    <option value="{{ $item->nombre }}" {{ $menu->nombre == $item->nombre ? 'selected' : '' }}>{{ $item->nombre }}</option>
+                                    @endforeach
+                                </select>
                                 <input type="hidden" name="categoria" value="segundo">
                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
                             </form>
@@ -71,7 +79,11 @@
                             <form action="{{ route('update_menu', $menu->id) }}" method="POST" class="space-y-4">
                                 @csrf
                                 @method('PUT')
-                                <input type="text" name="nombre" value="{{ $menu->nombre }}" class="w-full p-2 border border-gray-300 rounded">
+                                <select name="nombre" class="w-full p-2 border border-gray-300 rounded">
+                                    @foreach ($postres as $item)
+                                    <option value="{{ $item->nombre }}" {{ $menu->nombre == $item->nombre ? 'selected' : '' }}>{{ $item->nombre }}</option>
+                                    @endforeach
+                                </select>
                                 <input type="hidden" name="categoria" value="postre">
                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
                             </form>
@@ -88,11 +100,11 @@
                 </div>
 
                 <div class="w-full md:w-2/4">
-                    <h2 class="text-xl font-semibold mb-4">Añadir Nuevo Plato y Precio General del Menú</h2>
+                    <h2 class="text-xl font-semibold mb-4">Añadir Nuevo Plato</h2>
                     <form action="{{ route('add_menu') }}" method="POST" class="space-y-4 bg-white p-4 md:p-6 rounded shadow-md">
                         @csrf
                         <input type="text" name="nombre" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
-                        <input type="number" name="precio_general" placeholder="Precio General" class="w-full p-2 border border-gray-300 rounded" value="{{ $precio_general }}">
+                        
                         <select name="categoria" class="w-full p-2 border border-gray-300 rounded">
                             <option value="primero">Primero</option>
                             <option value="segundo">Segundo</option>
