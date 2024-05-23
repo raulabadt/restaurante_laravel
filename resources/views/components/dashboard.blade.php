@@ -22,7 +22,7 @@
                     <a href="/create_menu" class="text-gray-300 hover:text-white py-2 px-4 {{ Request::is('menu*') ? 'bg-gray-900' : '' }}{{ Request::is('menu*') ? 'text-red-500' : '' }} hover:bg-red-500 hover:text-white">Menú</a>
                 </li>
             </ul>
-            <button class="text-white bg-gray-700 py-2 px-4">Cerrar sesión</button>
+            <button class="text-white bg-gray-700 py-2 px-2 text-sm">Cerrar sesión</button>
         </div>
     </nav>
 
