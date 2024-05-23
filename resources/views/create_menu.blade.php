@@ -104,7 +104,7 @@
                     <form action="{{ route('add_menu') }}" method="POST" class="space-y-4 bg-white p-4 md:p-6 rounded shadow-md">
                         @csrf
                         <input type="text" name="nombre" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
-                        
+                        <input type="number" name="precio_general" placeholder="precio" class="w-full p-2 border border-gray-300 rounded">
                         <select name="categoria" class="w-full p-2 border border-gray-300 rounded">
                             <option value="primero">Primero</option>
                             <option value="segundo">Segundo</option>

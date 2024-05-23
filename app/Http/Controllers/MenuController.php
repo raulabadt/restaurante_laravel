@@ -22,9 +22,10 @@ class MenuController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'categoria' => 'required|in:primero,segundo,postre',
+            'precio_general' => 'nullable|numeric'
         ]);
 
-        Menu::create($request->only(['nombre', 'categoria']));
+        Menu::create($request->only(['nombre', 'categoria', 'precio_general']));
 
         return redirect()->route('create_menu')->with('success', 'Plato añadido exitosamente');
     }
