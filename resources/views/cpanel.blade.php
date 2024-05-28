@@ -42,6 +42,7 @@
 
                     <tbody id="table-body">
                         @foreach ($reservas as $reserva)
+                       
                         <tr>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->id }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->nombre }}</td>
@@ -51,7 +52,7 @@
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->num_niños }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->trona }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->fecha->format('Y-m-d') }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ $reserva->hora }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $reserva->hora->format('H:i')}}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->alergias }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->estado }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->codigo }}</td>
