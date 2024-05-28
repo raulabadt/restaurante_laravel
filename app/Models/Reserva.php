@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Reserva extends Model
 {
     use HasFactory;
+    use Searchable;
 
     protected $table = 'reservas';
 
@@ -38,5 +40,18 @@ class Reserva extends Model
         'estado' => 'string',
         'codigo' => 'string'
     ];
+
+     /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        // Customize array to be indexed
+        return $array;
+    }
 }
 
