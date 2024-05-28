@@ -50,7 +50,7 @@
                             <td class="border border-gray-300 px-4 py-2">{{ $dato->num_niños }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $dato->trona }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $dato->fecha->format('Y-m-d') }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ $dato->hora }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $dato->hora->format('H:i') }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $dato->alergias }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $dato->estado }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $dato->codigo }}</td>
