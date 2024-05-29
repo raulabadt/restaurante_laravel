@@ -19,40 +19,38 @@
         <div class="container mx-auto">
             <h2 class="text-2xl font-semibold mb-4">CPanel</h2>
             <!-- Buscador -->
-            <div class="mb-4">
-                <input type="text" id="search-nombre" placeholder="Buscar por Nombre" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-mail" placeholder="Buscar por Mail" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-telf" placeholder="Buscar por Teléfono" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-num-adultos" placeholder="Buscar por numero de adultos" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-num-ninos" placeholder="Buscar por numero de ninos" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-trona" placeholder="Buscar por numero de tronas" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-fecha" placeholder="Buscar por fecha" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-hora" placeholder="Buscar por hora" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-alergias" placeholder="Buscar por alergias" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-estado" placeholder="Buscar por estado de reserva" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <input type="text" id="search-codigo" placeholder="Buscar por Codigo de cancelacion" class="w-full border-gray-300 rounded-md px-4 py-2 mb-2">
-                <!-- Añadir más campos de búsqueda según sea necesario -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <input type="text" id="search-nombre" placeholder="Buscar por Nombre" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-mail" placeholder="Buscar por Mail" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-telf" placeholder="Buscar por Teléfono" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-num-adultos" placeholder="Buscar por número de adultos" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-num-ninos" placeholder="Buscar por número de niños" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-trona" placeholder="Buscar por número de tronas" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-fecha" placeholder="Buscar por fecha" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-hora" placeholder="Buscar por hora" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-alergias" placeholder="Buscar por alergias" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-estado" placeholder="Buscar por estado de reserva" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="text" id="search-codigo" placeholder="Buscar por Código de cancelación" class="w-full border-gray-300 rounded-md px-4 py-2">
             </div>
             <!-- Tabla de datos -->
-            <div class="overflow-x-auto min-w-full">
-                <table class="min-w-full border-collapse border border-gray-300">
+            <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+                <table class="min-w-full border-collapse">
                     <thead class="bg-gray-200">
-                        <tr class="text-xs md:text-base">
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">ID</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Nombre</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Mail</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Telefono</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Nº Adultos</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Nº Niños</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Trona</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Fecha</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Hora</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Alergias</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Estado</th>
-                            <th class="border border-gray-300 px-2 py-1 md:px-4 md:py-2">Cod Cancelacion</th>
+                        <tr>
+                            <th class="border border-gray-300 px-4 py-2 text-left">ID</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Nombre</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Mail</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Teléfono</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Nº Adultos</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Nº Niños</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Trona</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Fecha</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Hora</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Alergias</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Estado</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Cod Cancelación</th>
                         </tr>
                     </thead>
-
                     <tbody id="table-body">
                         @foreach ($reservas as $reserva)
                         <tr>
@@ -82,8 +80,6 @@
             return new Date(dateString).toLocaleDateString(undefined, options);
         }
 
-    
-
         async function searchReservas() {
             const nombre = document.getElementById('search-nombre').value;
             const mail = document.getElementById('search-mail').value;
@@ -96,24 +92,20 @@
             const alergias = document.getElementById('search-alergias').value;
             const estado = document.getElementById('search-estado').value;
             const codigo = document.getElementById('search-codigo').value;
-           
-            // Obtener más valores de búsqueda según sea necesario
 
             const response = await axios.get('/search', {
                 params: {
                     nombre: nombre,
                     mail: mail,
                     telf: telf,
-                    num_adultos:num_adultos,
-                    num_niños:num_niños,
-                    trona:trona,
+                    num_adultos: num_adultos,
+                    num_niños: num_niños,
+                    trona: trona,
                     fecha: fecha,
-                    hora:hora,
-                    alergias:alergias,
-                    estado:estado,
-                    codigo:codigo
-
-                    // Añadir más parámetros de búsqueda según sea necesario
+                    hora: hora,
+                    alergias: alergias,
+                    estado: estado,
+                    codigo: codigo
                 }
             });
 
