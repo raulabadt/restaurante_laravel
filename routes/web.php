@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SearchController;
 
 
 /*
@@ -29,6 +30,9 @@ Route::put('/menus/{id}', [MenuController::class, 'update'])->name('update_menu'
 Route::delete('/menus/{id}', [MenuController::class, 'destroy'])->name('delete_menu');
 // Ruta para mostrar el menú público
 Route::get('/menu', [MenuController::class, 'publicMenu'])->name('menu');
+
+Route::get('/cpanel', [SearchController::class, 'index']);
+Route::get('/search', [SearchController::class, 'search']);
 
 Route::get('/', function () {
     return view('homepage');
