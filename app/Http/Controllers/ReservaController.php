@@ -9,70 +9,27 @@ use Carbon\Carbon;
 
 class ReservaController extends Controller
 {
+    private const MAX_RESERVAS_POR_DIA = 70;
+
     public function store(Request $request)
     {   
-      
-    // Validar los datos recibidos del formulario
-    $request->validate([
-        'name' => 'required|string',
-        'mail' => 'required|string',
-        'telf' => 'required|string',
-        'adultos' => 'required|integer',
-        'niños' => 'required|integer',
-        'trona' => 'required|integer',
-        'date' => 'required|date',
-        'time' => 'required|date_format:H:i', // Cambiado de 'date' a 'date_format'
-        'alergias' => 'required|string'
-    ]);
+        // Validar los datos recibidos del formulario
+        $request->validate($this->validationRules());
 
-    // Obtener la fecha actual
-    $fecha_reserva = $request->input('date');
+        // Verificar límite de reservas para la fecha seleccionada
+        if ($this->reservasExcedidas($request->input('date'))) {
+            return redirect()->route('cupo_completo')->with('message', 'Estamos llenos');
+        }
 
-    // Contar el número de reservas para la fecha actual
-    $reservas_en_fecha = Reserva::whereDate('fecha', $fecha_reserva)->count();
-   
-    // Definir el número máximo de reservas permitidas por día
-    $max_reservas_por_dia = 70; // Por ejemplo, 70 reservas por día
-   
-    // Verificar si ya se alcanzó el límite de reservas para hoy
-    if ($reservas_en_fecha >= $max_reservas_por_dia) {
-        return redirect()->route('cupo_completo')->with('message', 'Estamos llenos');
-    }
+        // Generar código de cancelación
+        $codigo = $this->generarCodigoCancelacion();
 
+        // Crear la reserva
+        $reserva = $this->crearReserva($request, $codigo);
 
-    //Generamos el numero aleatorio de reserva
-    $codigoAleatorio = mt_rand(0, 999999);
+        // Enviar el código de cancelación por correo
+        $this->enviarCodigoPorCorreo($request->mail, $codigo);
 
-    $date = now()->format('Ymd');
-
-    //generamos el codigo estructurado de cancelación de reserva
-    $codigo = "C-" . $date . "-$codigoAleatorio";
-
-    // Crear una nueva reserva en la base de datos
-    $reserva = Reserva::create([
-        'nombre' => $request->name,// Corregido de $request->nombre
-        'mail' => $request->mail, 
-        'telf' => $request->telf,
-        'num_adultos' => $request->adultos, // Corregido de $request->num_adultos
-        'num_niños' => $request->niños, // Corregido de $request->num_niños
-        'trona' => $request->trona,
-        'fecha' => $request->date, // Corregido de $request->fecha
-        'hora' => $request->time, // Corregido de $request->hora
-        'alergias' => $request->alergias,
-        'estado' => 'reservado',
-        'codigo' => $codigo,
-        
-    ]);
-
-            $email = $request->mail;    
-            // Enviar el código al correo electrónico del usuario
-            $email = $request->mail; // Asegúrate de tener un campo de correo electrónico en tu formulario
-            Mail::raw('Tu código para la cancelación de reserva es: ' . $codigo .'caduca en un dia', function ($message) use ($email) {
-                $message->to($email)->subject('Código de reserva');
-            });
-
-        // Retorna una respuesta de éxito
-        // return response()->json(['message' => 'Reserva creada correctamente'], 200);
         return redirect()->route('reserve_correcta')->with('message', 'Reserva creada correctamente');
     }
 
@@ -83,32 +40,81 @@ class ReservaController extends Controller
             'codigo' => 'required|string',
         ]);
 
-        // Buscar la reserva en la base de datos por el código
-        $reserva = Reserva::where('codigo', $request->codigo)->first();
-
-        // Verificar si la reserva existe y si no ha caducado
-        if ($reserva ) {
-            // Obtener la dirección de correo electrónico asociada a la reserva
-            $email = $reserva->mail;
-
-            // Cambiar el estado de la reserva a "cancelado"
-            $reserva->estado = 'cancelado';
-            $reserva->save();
-
-            // Enviar correo electrónico de cancelación de reserva
-            Mail::raw('Tu reserva ha sido cancelada.', function ($message) use ($email) {
-                $message->to($email)->subject('Cancelación de Reserva');
-            });
-
-            // Retorna una respuesta de éxito
-            //return response()->json(['message' => 'Reserva cancelada correctamente'], 200);
+        // Buscar y cancelar la reserva
+        if ($this->cancelarReserva($request->codigo)) {
             return redirect()->route('reserve_cancel_correcta')->with('message', 'Reserva cancelada correctamente');
         } else {
-            // Retorna un mensaje de error si la reserva no existe o ha caducado
-            // return response()->json(['error' => 'El código de reserva no existe'], 404);
-            return redirect()->route('cod_no_existe')->with('message', 'El codigo no existe');
+            return redirect()->route('cod_no_existe')->with('message', 'El código no existe');
         }
     }
 
-   
+    private function validationRules(): array
+    {
+        return [
+            'name' => 'required|string',
+            'mail' => 'required|string',
+            'telf' => 'required|string',
+            'adultos' => 'required|integer',
+            'niños' => 'required|integer',
+            'trona' => 'required|integer',
+            'date' => 'required|date',
+            'time' => 'required|date_format:H:i',
+            'alergias' => 'required|string'
+        ];
+    }
+
+    private function reservasExcedidas(string $fecha): bool
+    {
+        $reservasEnFecha = Reserva::whereDate('fecha', $fecha)->count();
+        return $reservasEnFecha >= self::MAX_RESERVAS_POR_DIA;
+    }
+
+    private function generarCodigoCancelacion(): string
+    {
+        $codigoAleatorio = mt_rand(0, 999999);
+        $date = now()->format('Ymd');
+        return "C-{$date}-{$codigoAleatorio}";
+    }
+
+    private function crearReserva(Request $request, string $codigo): Reserva
+    {
+        return Reserva::create([
+            'nombre' => $request->name,
+            'mail' => $request->mail,
+            'telf' => $request->telf,
+            'num_adultos' => $request->adultos,
+            'num_niños' => $request->niños,
+            'trona' => $request->trona,
+            'fecha' => $request->date,
+            'hora' => $request->time,
+            'alergias' => $request->alergias,
+            'estado' => 'reservado',
+            'codigo' => $codigo,
+        ]);
+    }
+
+    private function enviarCodigoPorCorreo(string $email, string $codigo): void
+    {
+        Mail::raw('Tu código para la cancelación de reserva es: ' . $codigo . ' caduca en un día', function ($message) use ($email) {
+            $message->to($email)->subject('Código de reserva');
+        });
+    }
+
+    private function cancelarReserva(string $codigo): bool
+    {
+        $reserva = Reserva::where('codigo', $codigo)->first();
+
+        if ($reserva) {
+            $reserva->estado = 'cancelado';
+            $reserva->save();
+
+            Mail::raw('Tu reserva ha sido cancelada.', function ($message) use ($reserva) {
+                $message->to($reserva->mail)->subject('Cancelación de Reserva');
+            });
+
+            return true;
+        }
+
+        return false;
+    }
 }
