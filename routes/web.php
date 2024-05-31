@@ -23,13 +23,17 @@ Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('list
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
 
 // Ruta para mostrar la vista de gestión del menú
-Route::get('/create_menu', [MenuController::class, 'index'])->name('create_menu');
+//Route::get('/create_menu', [MenuController::class, 'index'])->name('create_menu');
 // Rutas para las operaciones CRUD
-Route::post('/menus', [MenuController::class, 'store'])->name('add_menu');
-Route::put('/menus/{id}', [MenuController::class, 'update'])->name('update_menu');
-Route::delete('/menus/{id}', [MenuController::class, 'destroy'])->name('delete_menu');
+//Route::post('/menus', [MenuController::class, 'store'])->name('add_menu');
+//Route::put('/menus/{id}', [MenuController::class, 'update'])->name('update_menu');
+//Route::delete('/menus/{id}', [MenuController::class, 'destroy'])->name('delete_menu');
 // Ruta para mostrar el menú público
-Route::get('/menu', [MenuController::class, 'publicMenu'])->name('menu');
+//Route::get('/menu', [MenuController::class, 'publicMenu'])->name('menu');
+
+Route::get('/create_menu', function () {
+    return view('create_menu');
+});
 
 Route::get('/cpanel', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'search']);

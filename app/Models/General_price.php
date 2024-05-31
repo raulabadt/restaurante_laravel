@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class General_price extends Model
 {
     use HasFactory;
+    
 
-   
-    protected $fillable = ['nombre', 'categoria'];
-
+    protected $fillable = ['key', 'value'];
 }

@@ -15,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::apiResource('menus', MenuController::class);
+Route::post('menus/general_price', [MenuController::class, 'setGeneralPrice']);
+Route::get('menus/general_price', [MenuController::class, 'getGeneralPrice']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+

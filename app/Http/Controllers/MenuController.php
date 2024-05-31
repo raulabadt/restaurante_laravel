@@ -2,77 +2,72 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\General_price;
+use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
     public function index()
     {
-        $primeros = Menu::where('categoria', 'primero')->get();
-        $segundos = Menu::where('categoria', 'segundo')->get();
-        $postres = Menu::where('categoria', 'postre')->get();
-        $precio_general = Menu::first()->precio_general ?? null;
-
-        return view('create_menu', compact('primeros', 'segundos', 'postres', 'precio_general'));
+        return Menu::all();
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'nombre' => 'required|string|max:255',
             'categoria' => 'required|in:primero,segundo,postre',
-            'precio_general' => 'nullable|numeric'
         ]);
 
-        Menu::create($request->only(['nombre', 'categoria', 'precio_general']));
+        $menu = Menu::create($validated);
 
-        return redirect()->route('create_menu')->with('success', 'Plato añadido exitosamente');
+        return response()->json($menu, 201);
     }
 
-    public function update(Request $request, $id)
+    public function show(Menu $menu)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'categoria' => 'required|in:primero,segundo,postre',
-            'precio_general' => 'nullable|numeric',
+        return $menu;
+    }
+
+    public function update(Request $request, Menu $menu)
+    {
+        $validated = $request->validate([
+            'nombre' => 'sometimes|required|string|max:255',
+            'categoria' => 'sometimes|required|in:primero,segundo,postre',
         ]);
 
-        $menu = Menu::find($id);
+        $menu->update($validated);
 
-        if (!$menu) {
-            return redirect()->route('create_menu')->with('error', 'Plato no encontrado');
-        }
-
-        $menu->update($request->only(['nombre', 'categoria']));
-
-        if ($request->has('precio_general')) {
-            Menu::query()->update(['precio_general' => $request->precio_general]);
-        }
-
-        return redirect()->route('create_menu')->with('success', 'Plato actualizado y precio general actualizado exitosamente');
+        return response()->json($menu, 200);
     }
 
-    public function destroy($id)
+    public function destroy(Menu $menu)
     {
-        $menu = Menu::find($id);
-
-        if (!$menu) {
-            return redirect()->route('create_menu')->with('error', 'Plato no encontrado');
-        }
-
         $menu->delete();
 
-        return redirect()->route('create_menu')->with('success', 'Plato eliminado exitosamente');
+        return response()->json(null, 204);
     }
 
-    public function publicMenu()
+    public function setGeneralPrice(Request $request)
     {
-        $primeros = Menu::where('categoria', 'primero')->get();
-        $segundos = Menu::where('categoria', 'segundo')->get();
-        $postres = Menu::where('categoria', 'postre')->get();
-        $precio_general = Menu::first()->precio_general ?? null;
+        $validated = $request->validate([
+            'generalPrice' => 'required|numeric',
+        ]);
 
-        return view('menu', compact('primeros', 'segundos', 'postres', 'precio_general'));
+        General_price::updateOrCreate(
+            ['key' => 'general_price'],
+            ['value' => $validated['generalPrice']]
+        );
+        dd($request);
+        return response()->json(['message' => 'Precio general actualizado'], 200);
     }
-}
+
+    public function getGeneralPrice()
+    {
+        $setting = General_price::where('key', 'general_price')->first();
+        $generalPrice = $setting ? $setting->value : null;
+
+        return response()->json(['generalPrice' => $generalPrice], 200);
+    }
+}  
