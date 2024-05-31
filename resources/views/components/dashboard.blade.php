@@ -13,7 +13,7 @@
     <!-- Navbar -->
     <nav class="bg-gray-800 p-4">
         <div class="flex justify-between items-center">
-            <div class="text-white text-lg font-semibold">Mi Aplicación</div>
+            <div class="text-white text-lg font-semibold">Mi Restaurante</div>
             <ul class="flex space-x-4">
                 <li>
                     <a href="/cpanel" class="text-gray-300 hover:text-white py-2 px-4 {{ Request::is('cpanel*') ? 'bg-gray-900' : '' }}{{ Request::is('cpanel*') ? 'text-red-500' : '' }} hover:bg-red-500 hover:text-white">CPanel</a>

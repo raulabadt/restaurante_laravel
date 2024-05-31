@@ -1,73 +1,76 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    <title>Mi Página Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        .chalkboard {
+            font-family: 'Indie Flower', cursive;
+            background-color: #2D2A2B;
+            color: #FFFFFF;
+            padding: 20px;
+            border: 10px solid #8B4513;
+            width: 400px;
+            margin: 0 auto;
+        }
+        .chalkboard .highlight {
+            color: #FFCCCC;
+        }
+        .chalkboard .price {
+            font-size: 3rem;
+            color: #FFFFCC;
+        }
+        .chalkboard .subtext {
+            color: #CCFFFF;
+        }
+        .chalkboard .section {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-<body class=" bg-orange-400 text-gray-800">
-@include('components.header')
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-2xl font-bold mb-6">Menú del Restaurante</h1>
+<body class=" bg-orange-400 text-gray-800 ">
 
-        <h2 class="text-xl font-semibold mb-4">Primeros</h2>
-        <div id="primeros-list">
-            @if($primeros->isEmpty())
-                <div class="text-center py-4">
-                <h3 class="text-lg font-bold">No hay primeros disponibles en este momento.</h3>
-                </div>
-            @else
+    <!-- Navigation -->
+    @include('components.header')
+
+    <!-- Menu Board -->
+    <div class="chalkboard mt-4 mb-4">
+        <h1 class="text-4xl">MENÚ DEL DÍA</h1>
+        
+        <div class="section">
+        <ul>
             @foreach ($primeros as $plato)
-            <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
-                <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
-            </div>
+                <li>- {{ $plato->nombre }}</li>
             @endforeach
-            @endif
-        </div>
-
-        <h2 class="text-xl font-semibold mb-4">Segundos</h2>
-        <div id="segundos-list">
-            @if($segundos->isEmpty())
-                <div class="text-center py-4">
-                <h3 class="text-lg font-bold">No hay segundos disponibles en este momento.</h3>
-                </div>
-            @else
-                @foreach ($segundos as $plato)
-                <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
-                    <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
-                </div>
-                @endforeach
-            @endif
-        </div>
-
-
-        <h2 class="text-xl font-semibold mb-4">Postres</h2>
-        <div id="postres-list">
-            @if($postres->isEmpty())
-                <div class="text-center py-4">
-                <h3 class="text-lg font-bold">No hay postres disponibles en este momento.</h3>
-                </div>
-            @else
+            </ul>
+            <div class="border-b-2 border-blue-500 my-2"></div>
+            <ul>
+            @foreach ($segundos as $plato)
+                <li>- {{ $plato->nombre }}</li>
+            @endforeach
+            </ul>
+            <div class="border-b-2 border-blue-500 my-2"></div>
+            <ul>
             @foreach ($postres as $plato)
-            <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
-                <h3 class="text-lg font-bold">{{ $plato->nombre }}</h3>
-            </div>
+                <li>- {{ $plato->nombre }}</li>
             @endforeach
-            @endif
+            </ul>
         </div>
-        <h2 class="text-xl font-semibold mb-4">Precio</h2>
-        <div id="postres-list">
+        <div class="section">
             @foreach ($postres as $plato)
-            <div class="menu-item mb-4 bg-white p-4 md:p-6 rounded shadow-md">
-            <h3 class="text-lg font-bold">{{ $precio_general }} €</h3>
-            </div>
+                <h2 class="price">{{ $precio_general }}</h2>
+                <p class="subtext">IVA INCLUIDO</p>
             @endforeach
         </div>
+        <p class="highlight">PAN Y UNA BEBIDA</p>
     </div>
+    <!-- Footer -->
     @include('components.footer')
 </body>
 </html>
-
 
 
