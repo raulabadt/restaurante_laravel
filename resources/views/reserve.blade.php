@@ -26,7 +26,7 @@
         <input type="hidden" id="mesaSeleccionada" name="mesa" value="">
             <div class="space-y-2">
                 <label for="name" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Nombre y Apellidos</label>
-                <input type="text" id="name" name="name" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Ingrese su nombre" required>
+                <input type="text" id="name" name="name" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Ingrese su nombre y apellidos" required>
             </div>
             <div class="space-y-2">
                 <label for="mail" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Introduce tu mail</label>
@@ -80,6 +80,69 @@
 </div>
 
 @include('components.footer')
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('tuFormulario');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('mail');
+      const phoneInput = document.getElementById('telf');
+
+      form.addEventListener('submit', function(event) {
+        let valid = true;
+
+        // Limpiar mensajes de error previos
+        clearErrors();
+
+        // Validar nombre
+        if (nameInput.value.trim() === '') {
+          showError(nameInput, 'El nombre y apellidos son obligatorios');
+          valid = false;
+        }
+
+        // Validar email
+        if (!validateEmail(emailInput.value)) {
+          showError(emailInput, 'El email no es válido');
+          valid = false;
+        }
+
+        // Validar teléfono
+        if (!validatePhone(phoneInput.value)) {
+          showError(phoneInput, 'El número de teléfono no es válido');
+          valid = false;
+        }
+
+        if (!valid) {
+          event.preventDefault();
+        }
+      });
+
+      function clearErrors() {
+        const errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(function(message) {
+          message.textContent = '';
+        });
+      }
+
+      function showError(input, message) {
+        const errorElement = document.createElement('p');
+        errorElement.textContent = message;
+        errorElement.className = 'error-message text-xs text-white-500';
+        input.parentNode.appendChild(errorElement);
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      function validatePhone(phone) {
+        const re = /^\d{10,15}$/;
+        return re.test(String(phone));
+      }
+    });
+  </script>
+   
 
 </body>
 
