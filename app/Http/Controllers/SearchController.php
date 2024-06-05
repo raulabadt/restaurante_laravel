@@ -11,7 +11,7 @@ class SearchController extends Controller
     {
       
          $reservas = Reserva::all();
-      
+        
 
         return view('cpanel', compact('reservas'));
     }

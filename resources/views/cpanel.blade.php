@@ -26,8 +26,8 @@
                 <input type="text" id="search-num-adultos" placeholder="Buscar por número de adultos" class="w-full border-gray-300 rounded-md px-4 py-2">
                 <input type="text" id="search-num-ninos" placeholder="Buscar por número de niños" class="w-full border-gray-300 rounded-md px-4 py-2">
                 <input type="text" id="search-trona" placeholder="Buscar por número de tronas" class="w-full border-gray-300 rounded-md px-4 py-2">
-                <input type="text" id="search-fecha" placeholder="Buscar por fecha" class="w-full border-gray-300 rounded-md px-4 py-2">
-                <input type="text" id="search-hora" placeholder="Buscar por hora" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="date" id="search-fecha" placeholder="Buscar por fecha" class="w-full border-gray-300 rounded-md px-4 py-2">
+                <input type="time" id="search-hora" placeholder="Buscar por hora" class="w-full border-gray-300 rounded-md px-4 py-2">
                 <input type="text" id="search-alergias" placeholder="Buscar por alergias" class="w-full border-gray-300 rounded-md px-4 py-2">
                 <input type="text" id="search-estado" placeholder="Buscar por estado de reserva" class="w-full border-gray-300 rounded-md px-4 py-2">
                 <input type="text" id="search-codigo" placeholder="Buscar por Código de cancelación" class="w-full border-gray-300 rounded-md px-4 py-2">
@@ -62,7 +62,7 @@
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->num_niños }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->trona }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->fecha->format('Y-m-d') }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ $reserva->hora }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $reserva->hora->format('H:i') }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->alergias }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->estado }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $reserva->codigo }}</td>
