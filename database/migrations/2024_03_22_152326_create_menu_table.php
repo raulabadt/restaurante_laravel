@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->decimal('precio_general', 8, 2)->nullable();
+           
             $table->enum('categoria', ['primero', 'segundo', 'postre']);
             $table->timestamps();
         });

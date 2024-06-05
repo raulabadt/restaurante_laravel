@@ -137,7 +137,7 @@
       }
 
       function validatePhone(phone) {
-        const re = /^\d{10,15}$/;
+        const re = /^\d{9}$/;
         return re.test(String(phone));
       }
     });
