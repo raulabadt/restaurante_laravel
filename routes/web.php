@@ -22,14 +22,13 @@ Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
 
-// Ruta para mostrar la vista de gestión del menú
-Route::get('/create_menu', [MenuController::class, 'index'])->name('create_menu');
-// Rutas para las operaciones CRUD
-Route::post('/menus', [MenuController::class, 'store'])->name('add_menu');
-Route::put('/menus/{id}', [MenuController::class, 'update'])->name('update_menu');
-Route::delete('/menus/{id}', [MenuController::class, 'destroy'])->name('delete_menu');
-// Ruta para mostrar el menú público
-Route::get('/menu', [MenuController::class, 'publicMenu'])->name('menu');
+
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');
+
+Route::get('/create_menu', [MenuController::class, 'create'])->name('create');
+Route::post('/create_menu', [MenuController::class, 'store'])->name('menus.store');
 
 Route::get('/cpanel', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'search']);
@@ -57,6 +56,8 @@ Route::get('/reserve', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+
 
 Route::get('/take_away', function () {
     return view('take_away');

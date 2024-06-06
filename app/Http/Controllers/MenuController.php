@@ -1,5 +1,7 @@
 <?php
 
+// MenuController.php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -7,14 +9,9 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function create()
     {
-        $primeros = Menu::where('categoria', 'primero')->get();
-        $segundos = Menu::where('categoria', 'segundo')->get();
-        $postres = Menu::where('categoria', 'postre')->get();
-        $precio_general = Menu::first()->precio_general ?? null;
-
-        return view('create_menu', compact('primeros', 'segundos', 'postres', 'precio_general'));
+        return view('create_menu');
     }
 
     public function store(Request $request)
@@ -22,57 +19,10 @@ class MenuController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'categoria' => 'required|in:primero,segundo,postre',
-            'precio_general' => 'nullable|numeric'
         ]);
 
-        Menu::create($request->only(['nombre', 'categoria', 'precio_general']));
+        Menu::create($request->all());
 
-        return redirect()->route('create_menu')->with('success', 'Plato añadido exitosamente');
-    }
-
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'categoria' => 'required|in:primero,segundo,postre',
-            'precio_general' => 'nullable|numeric',
-        ]);
-
-        $menu = Menu::find($id);
-
-        if (!$menu) {
-            return redirect()->route('create_menu')->with('error', 'Plato no encontrado');
-        }
-
-        $menu->update($request->only(['nombre', 'categoria']));
-
-        if ($request->has('precio_general')) {
-            Menu::query()->update(['precio_general' => $request->precio_general]);
-        }
-
-        return redirect()->route('create_menu')->with('success', 'Plato actualizado y precio general actualizado exitosamente');
-    }
-
-    public function destroy($id)
-    {
-        $menu = Menu::find($id);
-
-        if (!$menu) {
-            return redirect()->route('create_menu')->with('error', 'Plato no encontrado');
-        }
-
-        $menu->delete();
-
-        return redirect()->route('create_menu')->with('success', 'Plato eliminado exitosamente');
-    }
-
-    public function publicMenu()
-    {
-        $primeros = Menu::where('categoria', 'primero')->get();
-        $segundos = Menu::where('categoria', 'segundo')->get();
-        $postres = Menu::where('categoria', 'postre')->get();
-        $precio_general = Menu::first()->precio_general ?? null;
-
-        return view('menu', compact('primeros', 'segundos', 'postres', 'precio_general'));
+        return redirect()->route('reserve_correcta')->with('success', 'Menu creado exitosamente.');
     }
 }

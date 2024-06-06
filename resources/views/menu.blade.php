@@ -37,38 +37,7 @@
     <!-- Navigation -->
     @include('components.header')
 
-    <!-- Menu Board -->
-    <div class="chalkboard mt-4 mb-4">
-        <h1 class="text-4xl">MENÚ DEL DÍA</h1>
-        
-        <div class="section">
-        <ul>
-            @foreach ($primeros as $plato)
-                <li>- {{ $plato->nombre }}</li>
-            @endforeach
-            </ul>
-            <div class="border-b-2 border-blue-500 my-2"></div>
-            <ul>
-            @foreach ($segundos as $plato)
-                <li>- {{ $plato->nombre }}</li>
-            @endforeach
-            </ul>
-            <div class="border-b-2 border-blue-500 my-2"></div>
-            <ul>
-            @foreach ($postres as $plato)
-                <li>- {{ $plato->nombre }}</li>
-            @endforeach
-            </ul>
-        </div>
-        <div class="section">
-            @foreach ($postres as $plato)
-                <h2 class="price">{{ $precio_general }}</h2>
-                <p class="subtext">IVA INCLUIDO</p>
-            @endforeach
-        </div>
-        <p class="highlight">PAN Y UNA BEBIDA</p>
-    </div>
-    <!-- Footer -->
+   
     @include('components.footer')
 </body>
 </html>
