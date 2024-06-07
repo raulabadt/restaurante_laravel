@@ -22,10 +22,15 @@ Route::post('/cancelar-reserva', [ReservaController::class, 'cancelar'])->name('
 Route::post('/whitelist', [ReservaController::class, 'listaEspera'])->name('listaEspera.whitelist');
 Route::get('/cpanel', [DashboardController::class, 'index'])->name('cpanel.index');
 
-
 Route::get('/menu', function () {
     return view('menu');
 })->name('menu');
+
+Route::get('/create_menu', [MenuController::class, 'create'])->name('create');
+Route::post('/create_menu', [MenuController::class, 'store'])->name('menus.store');
+Route::get('menus/{menu}/edit', [MenuController::class, 'edit'])->name('menus.edit');
+Route::put('menus/{menu}', [MenuController::class, 'update'])->name('menus.update');
+Route::delete('menus/{menu}', [MenuController::class, 'destroy'])->name('menus.destroy');
 
 Route::get('/create_menu', [MenuController::class, 'create'])->name('create');
 Route::post('/create_menu', [MenuController::class, 'store'])->name('menus.store');
