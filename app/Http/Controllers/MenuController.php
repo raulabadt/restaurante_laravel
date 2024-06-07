@@ -7,10 +7,12 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
-    public function create()
+    public function create(Request $request)
     {
-        $menus = Menu::all(); // Obtener todos los menús de la base de datos
-        return view('create_menu', compact('menus'));
+        $orderBy = $request->get('order_by', 'nombre'); // Obtener el parámetro de ordenación, por defecto es 'nombre'
+        $menus = Menu::orderBy($orderBy)->get(); // Ordenar los menús
+
+        return view('create_menu', compact('menus', 'orderBy'));
     }
 
     public function store(Request $request)
@@ -27,7 +29,7 @@ class MenuController extends Controller
 
         Menu::create($request->all());
 
-        return redirect()->route('create')->with('success', 'Plato creado exitosamente.');
+        return redirect()->route('create')->with('success', 'Menú creado exitosamente.');
     }
 
     public function edit(Menu $menu)
@@ -43,19 +45,19 @@ class MenuController extends Controller
             'categoria' => 'required|in:primero,segundo,postre',
         ]);
 
-        // Verificar si el nombre ya existe en la base de datos
+        // Verificar si el nombre ya existe en la base de datos, excluyendo el registro actual
         if (Menu::where('nombre', $request->nombre)->where('id', '!=', $menu->id)->exists()) {
             return redirect()->route('edit', $menu)->withErrors(['nombre' => 'Ese plato ya está añadido.']);
         }
 
         $menu->update($request->all());
 
-        return redirect()->route('create')->with('success', 'Plato actualizado exitosamente.');
+        return redirect()->route('create')->with('success', 'Menú actualizado exitosamente.');
     }
 
     public function destroy(Menu $menu)
     {
         $menu->delete();
-        return redirect()->route('create')->with('success', 'Plato eliminado exitosamente.');
+        return redirect()->route('create')->with('success', 'Menú eliminado exitosamente.');
     }
 }
