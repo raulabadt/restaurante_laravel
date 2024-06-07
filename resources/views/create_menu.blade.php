@@ -14,7 +14,7 @@
             @csrf
             <div>
                 <label for="nombre" class="block text-gray-700">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm @error('nombre') border-red-500 @enderror">
+                <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
                 @error('nombre')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
