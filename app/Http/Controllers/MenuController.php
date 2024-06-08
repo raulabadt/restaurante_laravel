@@ -60,4 +60,16 @@ class MenuController extends Controller
         $menu->delete();
         return redirect()->route('create')->with('success', 'Menú eliminado exitosamente.');
     }
+
+    public function publicar(Menu $menu)
+    {
+        $menu->update(['publicado' => true]);
+        return redirect()->route('create')->with('success', 'Menú publicado exitosamente.');
+    }
+
+    public function publicados()
+    {
+        $menus = Menu::where('publicado', true)->orderBy('categoria')->get(); // Obtener los menús publicados
+        return view('menu', compact('menus'));
+    }
 }

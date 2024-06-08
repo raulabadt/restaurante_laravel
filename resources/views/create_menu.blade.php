@@ -60,6 +60,10 @@
                                     @method('DELETE')
                                     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="return confirm('¿Estás seguro de eliminar este menú?')">Eliminar</button>
                                 </form>
+                                <form action="{{ route('menus.publicar', $menu->id) }}" method="POST" class="inline-block">
+                                    @csrf
+                                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Publicar</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
