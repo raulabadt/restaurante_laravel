@@ -59,7 +59,7 @@
         </div>
         <div class="section">
            
-                <h2 class="price">15</h2>
+                <h2 class="price">15€</h2>
                 <p class="subtext">IVA INCLUIDO</p>
          
         </div>
