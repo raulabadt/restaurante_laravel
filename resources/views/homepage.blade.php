@@ -109,7 +109,7 @@
   
    
     <!-- Sección 3 -->
-    <section class="relative bg-gray-200 h-96 overflow-hidden">
+    <section class="relative bg-orange-200 h-96 overflow-hidden">
     <img class="w-full h-full object-cover" src="{{ asset('images/huevosrotos1.jpg') }}?v={{ time() }}" alt="Mi Foto">
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
         <h2 class="text-4xl font-extrabold text-gray-800 mb-2">Especialidades de la casa</h2>
