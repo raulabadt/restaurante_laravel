@@ -30,16 +30,16 @@
         }
     </style>
 </head>
-<body class=" bg-orange-400 text-gray-800 ">
+<body class="bg-orange-400 text-gray-800 flex flex-col min-h-screen">
     <!-- Navigation -->
     @include('components.header')
 
     <!-- Menu Board -->
-    <div class="chalkboard mt-4 mb-4">
+    <div class="chalkboard mt-4 mb-4 flex-grow">
         <h1 class="text-4xl">MENÚ DEL DÍA</h1>
 
         <div class="section">
-        <ul>
+            <ul>
                 @foreach ($menus->where('categoria', 'primero') as $menu)
                 <li>{{ $menu->nombre }}</li>
                 @endforeach
@@ -58,14 +58,12 @@
             </ul>
         </div>
         <div class="section">
-           
-                <h2 class="price">15€</h2>
-                <p class="subtext">IVA INCLUIDO</p>
-         
+            <h2 class="price">15€</h2>
+            <p class="subtext">IVA INCLUIDO</p>
         </div>
         <p class="highlight">PAN Y UNA BEBIDA</p>
     </div>
     <!-- Footer -->
     @include('components.footer')
 </body>
-</html>   
+</html>
