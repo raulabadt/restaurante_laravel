@@ -8,7 +8,7 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class="  bg-orange-400 text-gray-800 ">
+<body class="  bg-orange-200 text-gray-800 ">
 @include('components.header')
 
 <!--
@@ -36,7 +36,7 @@
     </div>
 </section>
 
-  <section class="flex items-center justify-center p-8 bg-orange-400">
+  <section class="flex items-center justify-center p-8 bg-orange-200">
       
           <div class="w-full max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
               <div class="text-center">

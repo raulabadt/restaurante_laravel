@@ -30,7 +30,7 @@
         }
     </style>
 </head>
-<body class="bg-orange-400 text-gray-800 flex flex-col min-h-screen">
+<body class="bg-orange-200 text-gray-800 flex flex-col min-h-screen">
     <!-- Navigation -->
     @include('components.header')
 

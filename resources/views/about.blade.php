@@ -8,7 +8,7 @@
     <!-- Agrega enlaces a tus archivos de estilo CSS aquí -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<body class=" bg-orange-400 text-gray-800 ">
+<body class=" bg-orange-200 text-gray-800 ">
 @include('components.header')
 <!--
 // v0 by Vercel.
