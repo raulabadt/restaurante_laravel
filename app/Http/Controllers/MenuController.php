@@ -29,7 +29,7 @@ class MenuController extends Controller
 
         Menu::create($request->all());
 
-        return redirect()->route('create')->with('success', 'Menú creado exitosamente.');
+        return redirect()->route('create')->with('success', 'Plato creado exitosamente.');
     }
 
     public function edit(Menu $menu)
@@ -52,19 +52,19 @@ class MenuController extends Controller
 
         $menu->update($request->all());
 
-        return redirect()->route('create')->with('success', 'Menú actualizado exitosamente.');
+        return redirect()->route('create')->with('success', 'Plato actualizado exitosamente.');
     }
 
     public function destroy(Menu $menu)
     {
         $menu->delete();
-        return redirect()->route('create')->with('success', 'Menú eliminado exitosamente.');
+        return redirect()->route('create')->with('success', 'Plato eliminado exitosamente.');
     }
 
     public function publicar(Menu $menu)
     {
         $menu->update(['publicado' => true]);
-        return redirect()->route('create')->with('success', 'Menú publicado exitosamente.');
+        return redirect()->route('create')->with('success', 'Plato publicado exitosamente.');
     }
 
     public function publicados()

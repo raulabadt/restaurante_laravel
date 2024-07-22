@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Crear Menú</title>
+    <title>Crear Plato</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 @include('components.dashboard')
 <main class="flex-1 p-10">
     <div class="container mx-auto bg-white p-8 rounded-lg shadow-md">
-        <h1 class="text-2xl font-semibold mb-4">Crear Menú</h1>
+        <h1 class="text-2xl font-semibold mb-4">Crear Plato</h1>
 
         <form action="{{ route('menus.store') }}" method="POST" class="space-y-4">
             @csrf
@@ -58,7 +58,7 @@
                                 <form action="{{ route('menus.destroy', $menu->id) }}" method="POST" class="inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="return confirm('¿Estás seguro de eliminar este menú?')">Eliminar</button>
+                                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="return confirm('¿Estás seguro de eliminar este plato del menu?')">Eliminar</button>
                                 </form>
                                 <form action="{{ route('menus.publicar', $menu->id) }}" method="POST" class="inline-block">
                                     @csrf
